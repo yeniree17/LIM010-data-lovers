@@ -1,0 +1,43 @@
+/* Rectangle 2.1 */
+.login{
+left: 0%;
+right: 0.22%;
+top: 34.58%;
+bottom: 0%;
+
+background: #FFFFFF;
+border-radius: 2px;
+}
+h1{
+
+width: 199px;
+height: 58px;
+left: 621px;
+top: 232px;
+
+}
+.boton{
+left: 0.43%;
+right: 0.43%;
+top: 0%;
+bottom: 1.96%;
+
+background: #3897F0;
+border-radius: 5px;
+
+}
+.contenedor1{
+height:684px;
+width: 693px;
+left: 26.25%;
+right: 26.25%;
+top: 14.06%;
+bottom: 18.26%;
+margin-top: 144px;
+margin-right: 378px;
+margin-left: 378px;
+
+background: #F7F7F7;
+box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
+
+}
