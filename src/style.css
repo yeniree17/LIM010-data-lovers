@@ -1,5 +1,20 @@
-/* Rectangle 2.1 */
-.login{
+
+.contenedor{
+    height:693px;
+    width: 684px;
+    left: 26.25%;
+    right: 26.25%;
+    top: 14.06%;
+    bottom: 18.26%;
+    margin-top: 144px;
+    margin-right: 378px;
+    margin-left: 378px;
+    
+    background: #F7F7F7;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
+    }
+
+.caja{
 left: 0%;
 right: 0.22%;
 top: 34.58%;
@@ -8,8 +23,8 @@ bottom: 0%;
 background: #FFFFFF;
 border-radius: 2px;
 }
-h1{
 
+h1{
 width: 199px;
 height: 58px;
 left: 621px;
@@ -26,18 +41,8 @@ background: #3897F0;
 border-radius: 5px;
 
 }
-.contenedor1{
-height:684px;
-width: 693px;
-left: 26.25%;
-right: 26.25%;
-top: 14.06%;
-bottom: 18.26%;
-margin-top: 144px;
-margin-right: 378px;
-margin-left: 378px;
 
-background: #F7F7F7;
-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
 
+.ocultar{
+    display: none;
 }

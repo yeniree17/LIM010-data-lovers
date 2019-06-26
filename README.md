@@ -1,17 +1,24 @@
-# Data Lovers
+# Proyecto N° 2 Data Lovers
+## Nombre: Latam Statistics 360° 
 
 ## Índice
 
 - [Índice](#índice)
-- [Preámbulo](#preámbulo)
-- [Objetivos de aprendizaje](#objetivos-de-aprendizaje)
-- [Consideraciones generales](#consideraciones-generales)
-- [Requerimientos del proyecto](#requerimientos-del-proyecto)
-- [Contenido de referencia](#contenido-de-referencia)
+- [Resumen](#resumen)
+- [Investigación UX](#investigación-UX)
+
 
 ***
 
-## Preámbulo
+## Resumen
+
+## Investigación UX
+
+Esta interfaz Web está dirigida a estudiantes de Economía y Trabajo Social, así como empresarios de PYMES que requieren utilizar indicadores demográficos y socioeconómicos para realizar sus estudios de mercado, investigación y otros análisis económicos. 
+
+Permite un acceso de la información gratuita y estadísticas de los paises emergentes de America Latina (LATAM), tales como Brasil, Chile, México y Perú. 
+
+La base de Datos proviene del Banco Mundial, una organización internacional que ofrece asesoría técnica y financimiento para que los Gobiernos y empresas privadas lleven a cabo proyectos para el Desarrollo e Inclusión Social.
 
 Según un estudio de IBM, el 90% de la data que existe hoy ha sido creada durante 
 los últimos dos años. Cada día generamos 2.5 trillones de bytes de datos, una 

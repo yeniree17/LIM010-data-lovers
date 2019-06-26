@@ -1,27 +1,47 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header></header>
+<html lang="es" dir="ltr">
 
-    <main></main>
-      <section class="contenedor1" >
-      <div id="pantallalogueo">
-        <h1> Banco Mundial </h1>
-        <input type="text" id="usuario" class="login"/>
-        <input type="password" id="password" class="login"/>
-        <button type="button" id="ingresar" class="boton">INGRESA</button>
-      </section>
-      </div>
-    <footer></footer>
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+  </header>
+
+  <main>
+  <!-- Pantalla de Login -->
+  <section class="contenedor" id="logueo">
+    <!--<div id="pantallalogueo">
+      <input type="text" id="usuario" class="login" />
+      <input type="password" id="password" class="login" />
+      <button type="button" id="ingresar" class="boton">INGRESA</button>-->
+      <h1>Latam Statistic 360°</h1>
+      <form class="formulario">
+        <label for="usuario">Usuario</label>
+        <input class="caja" id="usuario" type="text">
+        <label for="contraseña">Contraseña</label>
+        <input class="caja" id="contraseña" type="password">
+        <p>¿Olvidaste tu contraseña?</p>
+      </form>
+      <button class="boton" type="submit" id="ingresar">INGRESA</button>
+      <p>¿No tienes una cuenta? <span>Regístrate</span></p>
+      <p class="alerta" id="error"></p>
+  </section>
+  <section class="contenedor ocultar" id="buscador">
+<p>hola mundo</p>
+
+  </section>
+ </main>
+  <footer>
+  </footer>
+
+  <script src="./data/worldbank/worldbank.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
