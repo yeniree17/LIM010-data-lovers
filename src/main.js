@@ -6,7 +6,6 @@ const buscador = document.getElementById('buscador');
 const ingreso = document.getElementById('ingresar');
 let intento = 0;
 ingreso.addEventListener('click', () => {
-  console.log(WORLDBANK);
   const nombre = document.getElementById('usuario').value;     
   const contraseña = document.getElementById('contraseña').value; 
   const clave = 'LABORATORIA';
@@ -26,7 +25,7 @@ ingreso.addEventListener('click', () => {
     contraseña.disabled = true;
     ingreso.disabled = true;
   } else {
-    document.getElementById('error').innerHTML = 'Contraseña Incorrecta! al 3er intento, ya no podrás ingresar';
+    document.getElementById('error').innerHTML = 'Contraseña Incorrecta!';
     intento++;
   }
 });

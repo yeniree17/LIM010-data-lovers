@@ -20,9 +20,11 @@ Permite un acceso de la información gratuita y estadísticas de los paises emer
 
 La base de Datos proviene del Banco Mundial, una organización internacional que ofrece asesoría técnica y financimiento para que los Gobiernos y empresas privadas lleven a cabo proyectos para el Desarrollo e Inclusión Social.
 
-Según un estudio de IBM, el 90% de la data que existe hoy ha sido creada durante 
-los últimos dos años. Cada día generamos 2.5 trillones de bytes de datos, una 
-cifra sin precedentes.
+### Versión Desktop
+![Login-Desktop](https://user-images.githubusercontent.com/50186958/60305808-79dd2b00-9903-11e9-929f-6d41ef5e013a.png)
+
+### Versión Mobile
+![Login-Mobile](https://user-images.githubusercontent.com/50186958/60306031-5ff01800-9904-11e9-9243-0ea3dce9832f.png)
 
 No obstante, los datos por sí mismos son de poca utilidad. Para que esas 
 grandes cantidades de datos se conviertan en **información** fácil de leer para 
