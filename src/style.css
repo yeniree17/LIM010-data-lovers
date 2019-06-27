@@ -1,48 +1,71 @@
+body{
+    background-image: url(./img/LatinAmericanCities.jpg),linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .contenedor{
-    height:693px;
-    width: 684px;
-    left: 26.25%;
-    right: 26.25%;
-    top: 14.06%;
-    bottom: 18.26%;
-    margin-top: 144px;
-    margin-right: 378px;
-    margin-left: 378px;
-    
-    background: #F7F7F7;
-    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
-    }
+    height: 100vh;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
 
-.caja{
-left: 0%;
-right: 0.22%;
-top: 34.58%;
-bottom: 0%;
-
-background: #FFFFFF;
-border-radius: 2px;
 }
 
-h1{
-width: 199px;
-height: 58px;
-left: 621px;
-top: 232px;
 
+.recuadro{
+    background: rgba(51, 121, 183, 0.7);
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
+    width: 460px;
+    height: 516px;
+    margin: auto;
+    font-family: 'Open Sans';
+    color: #333333;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.recuadro1{
+    font-size: 16px;
+    line-height: 1px;
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    font-family: 'Helvetica', cursive;
+    font-size: 25px;
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    font-size: 16px;
+    line-height: 25px;
+}
+.caja{
+    width: 335px;
+    height: 45px;
 }
 .boton{
-left: 0.43%;
-right: 0.43%;
-top: 0%;
-bottom: 1.96%;
-
-background: #3897F0;
-border-radius: 5px;
-
+    background: #002245;
+    border-radius: 5px;
+    width: 335px;
+    height: 50px;
+    color: white;
+    font-size:15px;
 }
-
-
+.negrita{
+    font-weight: bold;
+}
+.centrado{
+    text-align: center;
+}
+.derecha{
+    text-align: right;
+}
 .ocultar{
     display: none;
 }
