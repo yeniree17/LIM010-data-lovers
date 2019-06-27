@@ -7,6 +7,7 @@ const ingreso = document.getElementById('ingresar');
 let intento = 0;
 ingreso.addEventListener('click', (evento) => {
   evento.preventDefault();
+  console.log(WORLDBANK);
   const nombre = document.getElementById('usuario').value;     
   const contraseña = document.getElementById('contraseña').value; 
   const clave = 'LABORATORIA';
