@@ -1,12 +1,14 @@
 body{
     background: url(./img/LatinAmericanCities.jpg),linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
     background-repeat: no-repeat;
+    margin:o;
     /*background: rgb(51, 121, 183);*/ 
 }
 h1 {
     overflow: hidden;
     height: 0px;
     width: 0px;
+    margin:0;
   }
 .contenedor{
     height: 100vh;
@@ -45,7 +47,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 25px;
 }
 .caja{
