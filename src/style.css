@@ -49,13 +49,13 @@ h1 {
     line-height: 25px;
 }
 .caja{
-    width: 335px;
+    width: 280px;
     height: 45px;
 }
 .boton{
     background: #002245;
     border-radius: 5px;
-    width: 335px;
+    width: 280px;
     height: 50px;
     color: white;
     font-size:15px;
@@ -96,6 +96,8 @@ h1 {
     }
     .caja{
         width: 335px;
-        height: 45px;
+    }
+    .boton{
+        width: 335px;
     }
 }
