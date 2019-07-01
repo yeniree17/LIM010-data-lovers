@@ -1,7 +1,8 @@
 body{
     background: url(./img/LatinAmericanCities.jpg),linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
     background-repeat: no-repeat;
-    margin:o;
+    margin:0;
+    font-family: "Open Sans", "sans-serif";
     /*background: rgb(51, 121, 183);*/ 
 }
 h1 {
@@ -13,7 +14,8 @@ h1 {
 .contenedor{
     height: 100vh;
     display: flex;
-    justify-content: center;  
+    justify-content: center;
+    flex-direction: column;  
     align-items: center;
 }
 .recuadro{
@@ -72,9 +74,12 @@ h1 {
 .derecha{
     text-align: right;
 }
-.alerta{
-    color: red;
+.blanco{
+    color: whitesmoke;
     font-size: 20px;
+}
+.fondo-azul{
+    background: #002245; 
 }
 .ocultar{
     display: none;
