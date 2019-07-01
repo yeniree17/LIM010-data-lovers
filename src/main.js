@@ -1,7 +1,10 @@
 /* Manejo del DOM */
 /* Display de pantalla */
 const logueo = document.getElementById('logueo');
-const buscador = document.getElementById('buscador');
+const bienvenida = document.getElementById('bienvenida');
+const portalDatos = document.getElementById('portal-datos');
+const piePagina = document.getElementById('pie-pagina');
+const encabezado = document.getElementById('encabezado');
 /* Login del Usuario*/
 const ingreso = document.getElementById('ingresar');
 let intento = 0;
@@ -13,7 +16,9 @@ ingreso.addEventListener('click', () => {
   
   if (contrasena === clave && nombreUsuario === nombre) {
     logueo.classList.add('ocultar'); // se oculta la seccion de inicio
-    buscador.classList.remove('ocultar');// muestra la seccion de buscador
+    bienvenida.classList.remove('ocultar');// muestra la seccion de buscador
+    piePagina.classList.remove('ocultar');// muestra el footer
+    encabezado.classList.remove('ocultar');// muestra el encabezado y navegador
     intento = 0;
   } else if (nombre === '' || contrasena === '') {
     document.getElementById('usuario').focus();

@@ -5,11 +5,12 @@
   <meta charset="utf-8">
   <title>LATAMSts360</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="shortcut icon" href= "img/favicon.ico"/>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header>
+  <header class="ocultar" id="encabezado">
     <h1>LATAM Statistics 360°</h1>
   </header>
 
@@ -32,14 +33,22 @@
           <p class="blanco negrita centrado" id="error"></p>
         </div>
       </div>
-      <p class="blanco negrita fondo-azul">Powered by Banco Mundial</p>
+      <p class="negrita fondo-blanco">Powered by <img src="./img/logoBM.svg" alt="banco-mundial"></p>
   </section>
-  <section class="contenedor ocultar" id="buscador">
-    <p>hola mundo</p>
+  <!-- Pantalla de Bienvenida -->
+<section class="contenedor ocultar" id="bienvenida">
+<p>hola mundo</p>
+</section>
+<!-- Pantalla de Portal de Datos -->
+  <section class="contenedor ocultar" id="portal-datos">
+    
 
   </section>
  </main>
-  <footer>
+  <!--Pie de pagina-->
+  <footer class="ocultar" id="pie-pagina">
+    <p>© Todos los Derechos Reservados | Accede a la Base de Datos <span class=""><a href="https://datos.bancomundial.org/">Banco Mundial</a></span></p>
+    <p>Desarrollado por Rosly-Sisley 2019</p>
   </footer>
 
   <script src="./data/worldbank/worldbank.js"></script>

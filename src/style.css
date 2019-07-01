@@ -73,13 +73,20 @@ h1 {
 }
 .derecha{
     text-align: right;
+    margin-top: 0px;
 }
 .blanco{
     color: whitesmoke;
     font-size: 20px;
 }
-.fondo-azul{
-    background: #002245; 
+.fondo-blanco {
+    background: rgba(255, 251, 251, 0.7); 
+    color: #002245;
+    text-align: center;
+    font-size: 20px;
+    margin: 0px;
+    
+
 }
 .ocultar{
     display: none;
