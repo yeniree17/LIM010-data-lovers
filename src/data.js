@@ -8,3 +8,10 @@ const example = () => {
 };
 
 window.example = example;
+
+const worldBankJS = (data) => {
+  const arrayData = [];
+  for (const nombre in data) { 
+
+  }
+};

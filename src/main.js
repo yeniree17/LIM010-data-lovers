@@ -34,3 +34,4 @@ ingreso.addEventListener('click', () => {
     intento++;
   }
 });
+console.log(WORLDBANK);
