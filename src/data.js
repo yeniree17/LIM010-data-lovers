@@ -4,20 +4,32 @@
 // puedes ver como agregamos la función a nuestro objeto global window
 console.log('archivo datajs');
 console.log(WORLDBANK);
-const saludar = (persona) => {
-  return 'hola como estas' + persona ;
-};
+
 
 const example = () => {
   return 'example';
 };
 
 window.example = example;
-window.aaa = 'hola';
-window.diasSemana = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes'];
-const worldBankJS = (data) => {
+
+/*const worldBankJS = (data) => {
   const arrayData = [];
   for (const nombre in data) { 
 
   }
+};*/
+
+//funcion para obtener los indicadores
+const nombreIndicador = (indicadorArr, ind) => {
+  let indicadorNombreArr = [];
+  indicadorNombreArr = indicadorArr.filter(elemento => elemento.indicatorCode === ind);
+  return indicadorNombreArr;
 };
+const tituloInd = (ind) => {
+  const dato = WORLDBANK.PER.indicators;
+  let indicadorNombreArr1 = [];
+  indicadorNombreArr1 = dato.filter(elemento => elemento.indicatorCode === ind);
+  return (indicadorNombreArr1[0].indicatorName);
+};
+
+console.log(nombreIndicador);

@@ -16,7 +16,7 @@ ingreso.addEventListener('click', () => {
   
   if (contrasena === clave && nombreUsuario === nombre) {
     logueo.classList.add('ocultar'); // se oculta la seccion de inicio
-    bienvenida.classList.remove('ocultar');// muestra la seccion de buscador
+    portalDatos.classList.remove('ocultar');// muestra la seccion de buscador
     piePagina.classList.remove('ocultar');// muestra el footer
     encabezado.classList.remove('ocultar');// muestra el encabezado y navegador
     intento = 0;

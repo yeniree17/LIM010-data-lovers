@@ -35,14 +35,43 @@
       </div>
       <p class="negrita fondo-blanco">Powered by <img src="./img/logoBM.svg" alt="banco-mundial"></p>
   </section>
-  <!-- Pantalla de Bienvenida -->
+ <!-- Pantalla de Bienvenida 
 <section class="contenedor ocultar" id="bienvenida">
 <p>hola mundo</p>
-</section>
+</section> -->
+
 <!-- Pantalla de Portal de Datos -->
   <section class="contenedor ocultar" id="portal-datos">
-    
-
+    <form id="buscador">
+      <div id="seleccionar-pais">
+        <label class="parametro">PAISES</label>
+        <label><input type="checkbox" name="pais[]" value="BRA">Brasil</label>
+        <label><input type="checkbox" name="pais[]" value="CHL">Chile</label>
+        <label><input type="checkbox" name="pais[]" value="MEX">México</label>
+        <label><input type="checkbox" name="pais[]" value="PER">Perú</label>
+      </div>  
+      <div id="seleccionar-indicador">
+        <label class="parametro">INDICADOR</label>
+        <select name="indicadores" id="lista-indicadores"></select>
+        <option disabled="" selected="">----Seleccione un indicador----</option>
+      </div>
+        <div id="seleccionar-periodo">
+        <label class="parametro">PERIODO</label>
+        <label class="etiqueta">Desde:</label>
+        <select name="desde" id="fecha1"></select>
+        <label class="etiqueta">Hasta:</label>
+        <select name="hasta" id="fecha2"></select>
+        </div>
+        <button class="boton negrita" type="submit" id="consultar">Consultar</button>
+      </form>
+      <fieldset id="resultado">
+        <div>
+          <table id="tabla"> 
+          </table>
+          <canvas id="grafico">
+            </canvas>
+        </div>
+      </fieldset>
   </section>
  </main>
   <!--Pie de pagina-->
