@@ -10,8 +10,17 @@
 </head>
 
 <body>
-  <header class="ocultar" id="encabezado">
+  <header class="ocultar centrar" id="encabezado">
+    <figure>
+      <img class="LATAM" src="./img/logo.png" alt="Logo-LATAM">
+    </figure>
     <h1>LATAM Statistics 360°</h1>
+    <nav>
+        <a class="btn-nav" href="#">¿Quienes Somos?</a>
+        <a class="btn-nav" href="#">Portal de Datos</a>
+        <a class="btn-nav" href="#">Contáctanos</a>
+      </ul>
+    </nav>
   </header>
 
   <main>
@@ -22,9 +31,9 @@
       <form class="formulario">
         
         <label for="usuario">Usuario</label>
-        <input class="caja" id="usuario" type="text">
+        <input class="caja" id="usuario" type="text" value="LABORATORIA">
         <label for="contrasena">Contraseña</label>
-        <input class="caja" id="contrasena" type="password">
+        <input class="caja" id="contrasena" type="password" value="LABORATORIA">
         <p class="derecha negrita">¿Olvidaste tu contraseña?</p>   
       </form>
         <div class="recuadro1">
@@ -42,21 +51,26 @@
 
 <!-- Pantalla de Portal de Datos -->
   <section class="contenedor ocultar" id="portal-datos">
-    <form id="buscador">
+    <form class="fondo-blanco" id="buscador">
       <div id="seleccionar-pais">
-        <label class="parametro">PAISES</label>
+        <label class="blanco parametro">PAISES</label>
         <label><input type="checkbox" name="pais[]" value="BRA">Brasil</label>
         <label><input type="checkbox" name="pais[]" value="CHL">Chile</label>
         <label><input type="checkbox" name="pais[]" value="MEX">México</label>
         <label><input type="checkbox" name="pais[]" value="PER">Perú</label>
       </div>  
       <div id="seleccionar-indicador">
-        <label class="parametro">INDICADOR</label>
-        <select name="indicadores" id="lista-indicadores"></select>
+        <label class=" blanco parametro">INDICADOR</label>
+        <select name="indicadores" id="lista-indicadores">
         <option disabled="" selected="">----Seleccione un indicador----</option>
+        <option value="value1">Value 1</option> 
+        <option value="value2">Value 2</option>
+        <option value="value3">Value 3</option>
+        </select>
+
       </div>
         <div id="seleccionar-periodo">
-        <label class="parametro">PERIODO</label>
+        <label class=" blanco parametro">PERIODO</label>
         <label class="etiqueta">Desde:</label>
         <select name="desde" id="fecha1"></select>
         <label class="etiqueta">Hasta:</label>

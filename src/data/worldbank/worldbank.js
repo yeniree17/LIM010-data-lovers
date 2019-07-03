@@ -36721,5 +36721,3 @@ const WORLDBANK = {
   }
 }
 ;;
-
-console.log(WORLDBANK);
