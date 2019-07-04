@@ -18,7 +18,7 @@ const indicadorPorPais = (pais) => { // Funcion cuando el usuario selecciona el 
 
 // console.log(indicadorPorPais(seleccionPais));
 
-const nombreIndicadorPorPais = (array) => { // Función para mostrar indicadores
+const nombreIndicadorPorPais = (array) => { // Función para mostrar los nombres indicadores en un nuevo array
   const newArrayNombreIndicador = [];
   for (let i = 0; i < array.length; i++) {
     newArrayNombreIndicador.push(array[i].countryCode + '-' + array[i].indicatorName);
