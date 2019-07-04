@@ -7,40 +7,25 @@
 // };
 // window.example = example;
 
-// console.log(WORLDBANK);
+console.log(WORLDBANK);
 
-// Funcion para mostrar indicadores
-const bancoMundial = (data) => {
-  let IndicadorArr = [];
-  for (let i = 0; i < data.length; i++) {
-    IndicadorArr.push({
-      indicador: data[i].indicatorName,
-    }); 
-  } return IndicadorArr;
-}; 
-bancoMundial(WORLDBANK.PER.indicators);
-console.log(bancoMundial(WORLDBANK.PER.indicators));
+const seleccionPais = prompt('Selecciona un Pais PER, MEX, CHL, BRA'); // FUNCION PARA ACTIVAR LOS BOTONES DE PAISES EN HTML
 
-window.bancoMundial = bancoMundial;
-
-// Funcion cuando el usuario selecciona el pais
-const paisSeleccionado = (data) => {
-  let paisArr = [];
-  paisArr = Object.keys(data);
-  return paisArr;
+const indicadorPorPais = (pais) => { // Funcion cuando el usuario selecciona el pais
+  const arrayIndicadores = WORLDBANK[pais].indicators;
+  return arrayIndicadores;
 };
-console.log(paisSeleccionado);
 
-/* funcion para obtener los indicadores
- const nombreIndicador = (indicadorArr, ind) => {
-  let indicadorNombreArr = [];
-  indicadorNombreArr = indicadorArr.filter(elemento => elemento.indicatorCode === ind);
-  return indicadorNombreArr;
+// console.log(indicadorPorPais(seleccionPais));
+
+const nombreIndicadorPorPais = (array) => { // Función para mostrar indicadores
+  const newArrayNombreIndicador = [];
+  for (let i = 0; i < array.length; i++) {
+    newArrayNombreIndicador.push(array[i].countryCode + '-' + array[i].indicatorName);
+  }
+  return newArrayNombreIndicador;
 };
-const tituloInd = (ind) => {
-  const dato = WORLDBANK.PER.indicators;
-  let indicadorNombreArr1 = [];
-  indicadorNombreArr1 = dato.filter(elemento => elemento.indicatorCode === ind);
-  return (indicadorNombreArr1[0].indicatorName);
-}; 
-console.log(nombreIndicador); */
+
+console.log(nombreIndicadorPorPais(indicadorPorPais(seleccionPais))); // inner para que se visualice en html
+
+window.nombreIndicadorPorPais = nombreIndicadorPorPais; // se agrega la función a nuestro objeto global window
