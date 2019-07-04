@@ -34,4 +34,17 @@ ingreso.addEventListener('click', () => {
     intento++;
   }
 });
-
+/* Parametros del portal de datos */
+const buscadorDatos = {
+  seleccionPais: (pais) => {
+    const paisesArr = document.getElementsByName(pais);
+    let seleccionUsuario = '';
+    for (let i = 0; i < paisesArr.length; i++) {
+      if (paisesArr[i].checked === true) {
+        seleccionUsuario = paisesArr[i].value;
+        return seleccionUsuario;
+      }
+    }
+  },
+  seleccionFecha: (desde, hasta)
+};
