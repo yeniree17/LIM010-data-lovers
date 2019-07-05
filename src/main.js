@@ -36,7 +36,7 @@ ingreso.addEventListener('click', () => {
 });
 /* Parametros del portal de datos */
 const buscadorDatos = {
-  seleccionPais: (pais) => {
+  seleccionPais1: (pais) => {
     const paisesArr = document.getElementsByName(pais);
     let seleccionUsuario = '';
     for (let i = 0; i < paisesArr.length; i++) {
@@ -46,5 +46,28 @@ const buscadorDatos = {
       }
     }
   },
-  seleccionFecha: (desde, hasta)
+  /*seleccionFecha: (desde, hasta)*/
 };
+
+/* funcion que despliega los nombres de los indicadores */
+const listaIndicadores = document.getElementById('lista-indicadores');
+const opcionesLista = (opcion) => {
+    let nombreIndicadores = `<option disabled selected>----Seleccione un indicador----</option>`;
+    for (let i = 0; i < opcion.length; i++) {
+        nombreIndicadores += `<option value='${opcion[i]}'>${opcion[i]}</option>`
+    }
+    return nombreIndicadores;
+};
+/* funcion para capturar la seleccion del pais desde el input radio */
+listaIndicadores.innerHTML = opcionesLista(nombreIndicadorPorPais(indicadorPorPais(seleccionPais))); //Devuelve los paises para seleccionarlos con radio
+
+const listaPaises = document.getElementById('paises');
+const opcionPaises = (paisesLatam) => {
+  let paisesLatam = '';
+    for (let i = 0; i < paisesLatam.length; i++) {
+        paisesLatam += `<input type="radio" class="pais ${paisesLatam[i]}" name="paises" value='${paisesLatam[i]}'/><label>${paisesLatam[i]}</label>`;
+    }
+    return paisesLatam;
+};
+
+listaPaises.innerHTML = opcionPaises(DATABANK.seleccionPais(WORLDBANK))
