@@ -11,8 +11,7 @@
 console.log(WORLDBANK);
 
 const seleccionPais = prompt('Selecciona un Pais PER, MEX, CHL, BRA'); // FUNCION PARA ACTIVAR LOS BOTONES DE PAISES EN HTML
-
-const indicadorPorPais = (pais) => { // Funcion cuando el usuario selecciona el pais
+const indicadorPorPais = (pais) => { // Funcion para acceder a los indicadores cuando el usuario escoge un pais
   const arrayIndicadores = WORLDBANK[pais].indicators;
   return arrayIndicadores;
 };
@@ -27,6 +26,7 @@ const nombreIndicadorPorPais = (array) => { // Función para mostrar los nombres
   return newArrayNombreIndicador;
 };
 
-console.log(nombreIndicadorPorPais(indicadorPorPais(seleccionPais))); // inner para que se visualice en html
+// console.log(nombreIndicadorPorPais(indicadorPorPais(seleccionPais))); // YA SE HIZO inner para que se visualice en html
 
 window.nombreIndicadorPorPais = nombreIndicadorPorPais; // se agrega la función a nuestro objeto global window
+window.indicadorPorPais = indicadorPorPais;
