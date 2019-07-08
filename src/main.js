@@ -10,7 +10,11 @@ const listaIndicadores = document.getElementById('lista-indicadores');
 /* Login del Usuario*/
 const ingreso = document.getElementById('ingresar');
 let intento = 0;
-const arrayPaises = [{pais: 'Perú', code : 'PER'}, {pais : 'Brasil', code:'BRA'}, {pais: 'Mexico', code:'MEX'},{pais : 'Chile', code:'CHL'}];
+const arrayPaises = [{pais: 'Perú',
+  code: 'PER'}, {pais: 'Brasil',
+  code: 'BRA'}, {pais: 'Mexico',
+  code: 'MEX'}, {pais: 'Chile',
+  code: 'CHL'}];
 ingreso.addEventListener('click', () => {
   const nombre = document.getElementById('usuario').value;     
   const contrasena = document.getElementById('contrasena').value; 
@@ -52,7 +56,7 @@ ingreso.addEventListener('click', () => {
   },
   /*seleccionFecha: (desde, hasta)*/
 /* funcion para capturar la seleccion del pais desde el input radio */
-//Devuelve los paises para seleccionarlos con radio 
+//  Devuelve los paises para seleccionarlos con radio 
 
 listaPaises.addEventListener('change', (event) => { // Funcion para acceder a los indicadores cuando el usuario escoge un pais
   const paisSeleccionado = event.target.value;
