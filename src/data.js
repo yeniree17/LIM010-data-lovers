@@ -7,44 +7,54 @@
 // window.example = example;
 
 // console.log(WORLDBANK);
-const opcionPaises = (arrayPaises) => {// FUNCION PARA ACTIVAR LOS BOTONES DE PAISES EN HTML
+const opcionPaises = (arrayPaises) => {// Función para activar los input de paises de forma dinámica
   let paisesL = '';
   for (let i = 0; i < arrayPaises.length; i++) {
     paisesL += `<input type="radio" class="pais ${arrayPaises[i].code}" name="paises" value='${arrayPaises[i].code}'/><label>${arrayPaises[i].pais}</label>`;
   }
   return paisesL;
 };
-/* funcion que despliega los nombres de los indicadores */
+/* funcion que despliega los nombres de los indicadores de forma dinámica cuando el usuario selecciona el país */
 const opcionesLista = (opcion) => {
   let nombreIndicadores = '<option disabled selected>----Seleccione un indicador----</option>';
   for (let i = 0; i < opcion.length; i++) {
-    nombreIndicadores += `<option value='${opcion[i]}'>${opcion[i]}</option>`;
+    nombreIndicadores += `<option value='${opcion[i].split('-')[0]}-${i}'>${opcion[i]}</option>`;
   }
   return nombreIndicadores;
 };
-const indicadorPorPais = (pais) => { // Funcion para acceder a los indicadores cuando el usuario escoge un pais
+// Funcion para acceder a los indicadores cuando el usuario escoge un pais
+const indicadorPorPais = (pais) => { 
   const arrayIndicadores = WORLDBANK[pais].indicators;
   return arrayIndicadores;
 };
-
-// console.log(indicadorPorPais(seleccionPais));
-
-const nombreIndicadorPorPais = (array) => { // Función para mostrar los nombres indicadores en un nuevo array
+// Función para mostrar los nombres indicadores en un nuevo array
+const nombreIndicadorPorPais = (array) => { 
   let newArrayNombreIndicador = [];
   for (let i = 0; i < array.length; i++) {
     newArrayNombreIndicador.push(array[i].countryCode + '-' + array[i].indicatorName);
   }
   return newArrayNombreIndicador;
 };
-
-/* const seleccionarFecha = (data) => { // Funcion para establecer fecha o rango de fecha
-  const arrayFecha = WORLDBANK[pais].indicators[i].data;
-  return arrayFecha;
-}; */
-
-
-// console.log(nombreIndicadorPorPais(indicadorPorPais(seleccionPais))); // YA SE HIZO inner para que se visualice en html
+/* Funcion para establecer la primera fecha o rango de fecha en el input*/
+const listaFecha1 = (opcion) => {
+  let rangoDesde = '<option disabled selected>--Año--</option>';
+  for (let i = 0; i < opcion.length; i++) {
+    rangoDesde += `<option value='${opcion[i]}'>${opcion[i]}</option>`;
+  }
+  return rangoDesde;
+};
+/* Funcion para establecer la segunda fecha o rango de fecha en el input*/
+const listaFecha2 = (opcion) => {
+  let rangoHasta = '<option disabled selected>--Año--</option>';
+  for (let i = 0; i < opcion.length; i++) {
+    rangoHasta += `<option value='${opcion[i]}'>${opcion[i]}</option>`;
+  }
+  return rangoHasta;
+};
+// se agrega las funciones a nuestro objeto global window
 window.opcionPaises = opcionPaises;
 window.opcionesLista = opcionesLista;
-window.nombreIndicadorPorPais = nombreIndicadorPorPais; // se agrega la función a nuestro objeto global window
+window.nombreIndicadorPorPais = nombreIndicadorPorPais; 
 window.indicadorPorPais = indicadorPorPais;
+window.listaFecha1 = listaFecha1;
+window.listaFecha2 = listaFecha2;
