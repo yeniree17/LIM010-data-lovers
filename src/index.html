@@ -54,25 +54,18 @@
     <form class="fondo-blanco" id="buscador">
       <div id="seleccionar-pais">
        <p class="blanco parametro">PAISES</p>
-        <div id= "paises">
-      <!-- <input type="radio" class="pais BRA" name="paises" value="BRA">
-          <label for="paises">Brasil</label>
-        <input type="radio" class="pais CHL" name="paises" value="CHL">
-          <label for="paises">Chile</label>
-        <input type="radio" class="pais MEX" name="paises" value="MEX">
-          <label for="paises">México</label>
-        <input type="radio" class="pais PER" name="paises" value="PER">
-          <label for="paises">Perú</label>-->
+        <div id= "lista-paises">
         </div>
       </div>  
       <div id="seleccionar-indicador">
         <p class=" blanco parametro">INDICADOR</p>
         <select name="indicadores" id="lista-indicadores">
+      <option disabled selected>----Seleccione un indicador----</option>
         </select>
 
       </div>
         <div id="seleccionar-periodo">
-        <label class=" blanco parametro">PERIODO</label>
+        <p class=" blanco parametro">PERIODO</p>
         <label class="etiqueta">Desde:</label>
         <select name="desde" id="fecha1"></select>
         <label class="etiqueta">Hasta:</label>
