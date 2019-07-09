@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-body {
-    background: url(./img/LatinAmericanCities.jpg),linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-=======
 body{
     background: url(./img/LatinAmericanCities.jpg),linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)); */
->>>>>>> 97292efa76097186eab9d08fe28e944bf56421ce
     background-repeat: no-repeat;
     margin:0;
     font-family: "Open Sans", "sans-serif";

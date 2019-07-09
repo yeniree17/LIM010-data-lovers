@@ -27,9 +27,6 @@ const nombreIndicadorPorPais = (array) => { // Función para mostrar indicadores
   return newArrayNombreIndicador;
 };
 
-<<<<<<< HEAD
 console.log(nombreIndicadorPorPais(indicadorPorPais(seleccionPais))); // inner para que se visualice en html
 
 window.nombreIndicadorPorPais = nombreIndicadorPorPais; // se agrega la función a nuestro objeto global window
-=======
->>>>>>> 97292efa76097186eab9d08fe28e944bf56421ce
