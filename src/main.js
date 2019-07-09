@@ -75,7 +75,7 @@ listaIndicadores.addEventListener('change', (event) => {
   const intervalo = indicadorSeleccionado.split('-')[1];
   console.log(pais);
   console.log(intervalo);
-  const fecha = WORLDBANK[pais].indicators[indicadorSeleccionado].data; // aqui tengo q hacer el split_AQUI QUEDE OJOOO
+  const fecha = WORLDBANK[pais].indicators[indicadorSeleccionado].data[i]; // aqui tengo q hacer el split_AQUI QUEDE OJOOO
   const dataFecha = Object.keys(fecha);
   console.log(dataFecha);
 
