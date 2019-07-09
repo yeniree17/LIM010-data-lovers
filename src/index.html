@@ -16,8 +16,8 @@
     </figure>
     <h1>LATAM Statistics 360°</h1>
     <nav>
-        <a class="btn-nav" href="#">¿Quienes Somos?</a>
-        <a class="btn-nav" href="#">Portal de Datos</a>
+        <a class="btn-nav" href="#">¿Quienes Somos? |</a>
+        <a class="btn-nav" href="#">Portal de Datos |</a>
         <a class="btn-nav" href="#">Contáctanos</a>
       </ul>
     </nav>
@@ -50,39 +50,32 @@
 </section> -->
 
 <!-- Pantalla de Portal de Datos -->
-  <section class="contenedor ocultar" id="portal-datos">
+  <section class="contenedor1 ocultar" id="portal-datos">
     <form class="fondo-blanco" id="buscador">
       <div id="seleccionar-pais">
        <p class="blanco parametro">PAISES</p>
-        <div id= "paises">
-        <input type="radio" class="pais BRA" name="paises" value="BRA">
-          <label for="paises">Brasil</label>
-        <input type="radio" class="pais CHL" name="paises" value="CHL">
-          <label for="paises">Chile</label>
-        <input type="radio" class="pais MEX" name="paises" value="MEX">
-          <label for="paises">México</label>
-        <input type="radio" class="pais PER" name="paises" value="PER">
-          <label for="paises">Perú</label>
+        <div id= "lista-paises">
         </div>
       </div>  
       <div id="seleccionar-indicador">
         <p class=" blanco parametro">INDICADOR</p>
         <select name="indicadores" id="lista-indicadores">
-        <option disabled="" selected="">----Seleccione un indicador----</option>
-        <option value="value1">Value 1</option> 
-        <option value="value2">Value 2</option>
-        <option value="value3">Value 3</option>
+      <option disabled selected>----Seleccione un indicador----</option>
         </select>
 
       </div>
         <div id="seleccionar-periodo">
-        <label class=" blanco parametro">PERIODO</label>
+        <p class=" blanco parametro">PERIODO</p>
         <label class="etiqueta">Desde:</label>
-        <select name="desde" id="fecha1"></select>
+        <select name="desde" id="fecha1">
+          <option disabled selected>--Año--</option>
+        </select>
         <label class="etiqueta">Hasta:</label>
-        <select name="hasta" id="fecha2"></select>
+        <select name="hasta" id="fecha2">
+          <option disabled selected>--Año--</option>
+        </select>
         </div>
-        <button class="boton negrita" type="submit" id="consultar">Consultar</button>
+        <button class="boton negrita" value= "generaTabla" type="button" id="consultar">Consultar</button>
       </form>
       <fieldset id="resultado">
         <div>
@@ -95,9 +88,9 @@
   </section>
  </main>
   <!--Pie de pagina-->
-  <footer class="ocultar" id="pie-pagina">
-    <p>© Todos los Derechos Reservados | Accede a la Base de Datos <span class=""><a href="https://datos.bancomundial.org/">Banco Mundial</a></span></p>
-    <p>Desarrollado por Rosly-Sisley 2019</p>
+  <footer class="negrita ocultar" id="pie-pagina">
+    <p class="txt-final">© Todos los Derechos Reservados | Accede a la Base de Datos <span class=""><a href="https://datos.bancomundial.org/">Banco Mundial</a></span></p>
+    <p class="txt-final">Desarrollado por Rosly-Sisley 2019</p>
   </footer>
 
   <script src="./data/worldbank/worldbank.js"></script>
