@@ -39,7 +39,7 @@ const nombreIndicadorPorPais = (array) => {
 const listaFecha1 = (opcion) => {
   let rangoDesde = '<option disabled selected>--Año--</option>';
   for (let i = 0; i < opcion.length; i++) {
-    rangoDesde += `<option value='${opcion[i]}'>${opcion[i]}</option>`;
+    rangoDesde += `<option value='${opcion[i].split('-')[0]}'>${opcion[i].split('-')[0]}</option>`;
   }
   return rangoDesde;
 };

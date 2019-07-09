@@ -67,7 +67,7 @@ listaPaises.addEventListener('change', (event) => { // Funcion para acceder a lo
   listaIndicadores.innerHTML = opcionesLista(nombreIndicadorPorPais(indicadorPorPais(paisSeleccionado)));
   // console.log(paisSeleccionado);
 });
-console.log(listaPaises.value);
+
 /* funcion para vincular los indicadores con la data de años en el html */
 listaIndicadores.addEventListener('change', (event) => {
   const indicadorSeleccionado = event.target.value;
@@ -75,10 +75,10 @@ listaIndicadores.addEventListener('change', (event) => {
   const intervalo = indicadorSeleccionado.split('-')[1];
   console.log(pais);
   console.log(intervalo);
-  const fecha = WORLDBANK[pais].indicators[indicadorSeleccionado].data[i]; // aqui tengo q hacer el split_AQUI QUEDE OJOOO
+  // const fecha = WORLDBANK[pais].indicators[indicadorSeleccionado]['data'][intervalo]; // aqui tengo q hacer el split_AQUI QUEDE OJOOO
+  const fecha = WORLDBANK[pais].indicators[intervalo].data;
   const dataFecha = Object.keys(fecha);
   console.log(dataFecha);
-
   fechaDesde.innerHTML = listaFecha1(dataFecha);
   fechaHasta.innerHTML = listaFecha2(dataFecha);
 });
