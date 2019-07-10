@@ -5,6 +5,8 @@ const bienvenida = document.getElementById('bienvenida');
 const portalDatos = document.getElementById('portal-datos');
 const piePagina = document.getElementById('pie-pagina');
 const encabezado = document.getElementById('encabezado');
+const areaResultado = document.getElementById('resultado');
+const areaTabla = document.getElementById('tabla');
 
 /* Obtención de parámetros del portal de Datos */
 const listaPaises = document.getElementById('lista-paises');
@@ -82,23 +84,18 @@ listaIndicadores.addEventListener('change', (event) => {
   fechaDesde.innerHTML = listaFecha1(dataFecha);
   fechaHasta.innerHTML = listaFecha2(dataFecha);
 });
+/* Evento para mostrar resultados en tabla*/
+const mostrarTabla = document.getElementById('consultar');
 
-/* funcion para generar tabla */
-// const fecha = WORLDBANK.PER.indicators[0].data;
-// console.log(fecha);
-// const dataFecha = Object.entries(fecha);
-// console.log(dataFecha);
+mostrarTabla.addEventListener('click', (event) => {
+  areaResultado.classList.remove('ocultar');// muestra la seccion de resultados
+  areaTabla.classList.remove('ocultar');// muestra la tabla resultante
 
+  const fecha1 =  document.getElementById('fecha1').value;
 
-// const consultar = document.getElementById('consultar');
-// consultar.addEventListener('click', () => {
-//   const dataFecha = document.getElementsByTagName('body')[0];
-//   const tabla = document.createElement('table');
-//   const fila = '';
-//   const celda = '';
-//     for(var i=0;i<dataFecha.length;i++){
-//       const fila = document.createElement ('tr');
-//       const celda = document.createElement('td');
-      
-//     }
-// });
+  const valor = WORLDBANK.BRA.indicators[0].data;
+  // console.log(valor);
+  // const pais1 = indicadorSeleccionado.split('-')[0];
+  // const intervalo1 = indicadorSeleccionado.split('-')[1];
+  areaTabla.innerHTML = mostrarData(valor);
+});
