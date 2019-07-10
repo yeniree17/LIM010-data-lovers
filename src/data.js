@@ -47,10 +47,31 @@ const listaFecha1 = (opcion) => {
 const listaFecha2 = (opcion) => {
   let rangoHasta = '<option disabled selected>--Año--</option>';
   for (let i = 0; i < opcion.length; i++) {
-    rangoHasta += `<option value='${opcion[i]}'>${opcion[i]}</option>`;
+    rangoHasta += `<option value='${opcion[i].split('-')[0]}'>${opcion[i].split('-')[0]}</option>`;
   }
   return rangoHasta;
 };
+/* Funcion para mostrar tabla*/
+const mostrarData = (data) => {
+  console.log(data);
+  const dataValor = Object.keys(data);
+
+  console.log(dataValor);
+  let valorData = `<tr>
+    <th>año</th>
+    <th>porcentaje</th>
+  </tr>`;
+  for (let i = 0; i < dataValor.length; i++) {
+    valorData += `<tr>
+      <td>${dataValor[i]}</td>
+      <td>${data[dataValor[i]] === '' ? 'no tiene valor' : data[dataValor[i]] }</td>
+    </tr>`;
+  // console.log(datos[i]);
+  }
+  return valorData;
+};
+
+
 // se agrega las funciones a nuestro objeto global window
 window.opcionPaises = opcionPaises;
 window.opcionesLista = opcionesLista;

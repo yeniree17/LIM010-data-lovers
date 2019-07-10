@@ -84,9 +84,18 @@ listaIndicadores.addEventListener('change', (event) => {
   fechaDesde.innerHTML = listaFecha1(dataFecha);
   fechaHasta.innerHTML = listaFecha2(dataFecha);
 });
-/* Evento para mostrar resultados*/
+/* Evento para mostrar resultados en tabla*/
 const mostrarTabla = document.getElementById('consultar');
-mostrarTabla.addEventListener('click', () => {
+
+mostrarTabla.addEventListener('click', (event) => {
   areaResultado.classList.remove('ocultar');// muestra la seccion de resultados
   areaTabla.classList.remove('ocultar');// muestra la tabla resultante
+
+  const fecha1 =  document.getElementById('fecha1').value;
+
+  const valor = WORLDBANK.BRA.indicators[0].data;
+  // console.log(valor);
+  // const pais1 = indicadorSeleccionado.split('-')[0];
+  // const intervalo1 = indicadorSeleccionado.split('-')[1];
+  areaTabla.innerHTML = mostrarData(valor);
 });
