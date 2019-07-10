@@ -5,6 +5,8 @@ const bienvenida = document.getElementById('bienvenida');
 const portalDatos = document.getElementById('portal-datos');
 const piePagina = document.getElementById('pie-pagina');
 const encabezado = document.getElementById('encabezado');
+const areaResultado = document.getElementById('resultado');
+const areaTabla = document.getElementById('tabla');
 
 /* Obtención de parámetros del portal de Datos */
 const listaPaises = document.getElementById('lista-paises');
@@ -81,4 +83,10 @@ listaIndicadores.addEventListener('change', (event) => {
   console.log(dataFecha);
   fechaDesde.innerHTML = listaFecha1(dataFecha);
   fechaHasta.innerHTML = listaFecha2(dataFecha);
+});
+/* Evento para mostrar resultados*/
+const mostrarTabla = document.getElementById('consultar');
+mostrarTabla.addEventListener('click', () => {
+  areaResultado.classList.remove('ocultar');// muestra la seccion de resultados
+  areaTabla.classList.remove('ocultar');// muestra la tabla resultante
 });

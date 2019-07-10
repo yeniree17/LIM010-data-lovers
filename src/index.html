@@ -77,11 +77,17 @@
         </div>
         <button class="boton negrita" type="button" id="consultar">Consultar</button>
       </form>
-      <fieldset id="resultado">
+      <fieldset class = "ocultar" id="resultado">
         <div>
-          <table id="tabla"> 
+          <table class= "ocultar" id="tabla"> 
           </table>
-          <canvas id="grafico">
+          <div class="ocultar" id="orden-promedio">
+          <button class="boton negrita" type="button" id="orden-ascend">Orden Ascendente</button>
+          <button class="boton negrita" type="button" id="Orden-descend">Orden Descendente</button>
+          <button class="boton negrita" type="button" id="promedio">Calcular Promedio</button>
+          <p id="valor-promedio">El promedio es:</p>
+          </div>
+          <canvas class = "ocultar" id="grafico">
             </canvas>
         </div>
       </fieldset>
