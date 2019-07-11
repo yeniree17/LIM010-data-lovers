@@ -115,14 +115,14 @@ listaIndicadores.addEventListener('change', (event) => {
   fechaHasta.innerHTML = listaFecha2(dataFecha);
 });
 /* Evento para mostrar resultados en tabla METODO 1*/
-const generarTabla = (arrFecha, arrValor, nombrePais, indicador, id) => {
-  const box = document.getElementById(id);
-  box.innerHTML = `<tr><caption>${nombrePais} : ${indicador}</caption></tr><tr><th>Año</th><th>Dato</th></tr>`;
-  arrFecha.forEach(function (element, index) {
-      let convert = FunctionsAdd.roundN(arrValor[index], 3)
-      box.innerHTML += `<tr><td> ${element}</td><td>${convert}</td><tr>`;
-  });
-}
+// const generarTabla = (arrFecha, arrValor, nombrePais, indicador, id) => {
+//   const box = document.getElementById(id);
+//   box.innerHTML = `<tr><caption>${nombrePais} : ${indicador}</caption></tr><tr><th>Año</th><th>Dato</th></tr>`;
+//   arrFecha.forEach(function (element, index) {
+//       let convert = FunctionsAdd.roundN(arrValor[index], 3)
+//       box.innerHTML += `<tr><td> ${element}</td><td>${convert}</td><tr>`;
+//   });
+// }
 
 
 /* Evento para mostrar resultados en tabla METODO 2*/
@@ -134,19 +134,39 @@ const mostrarData = (data) => {
     <th>Año</th>
     <th>Dato</th>
   </tr>`;
+  
+  //   let imput1 = Object.keys(fecha1);
+  //     console.log(imput1);
+  //   let imput2 = parseInt(document.getElementById(fecha2).value);
+  // for (let i = 0; i < dataValor.length; i++) {
+  //   valorData += `<tr>
+  //     <td>${dataValor[i]}</td>
+  //     <td>${data[dataValor[i]] === '' ? 'no tiene valor' : data[dataValor[i]] }</td>
+  //   </tr>`;
+  // // console.log(datos[i]);
+  //   }
+  //   return valorData;
+  // };
+  
+/* Evento para mostrar resultados en tabla*/
+const mostrarTabla = document.getElementById('mostrarTabla');
+mostrarTabla.addEventListener('click', (event) => {
+  areaResultado.classList.remove('ocultar');// muestra la seccion de resultados
+  areaTabla.classList.remove('ocultar');// muestra la tabla resultante
+
+      let imput1 = document.getElementById(fecha1);
+      console.log(imput1);
+    let imput2 = parseInt(document.getElementById(fecha2).value);
+    console.log(imput2);
   for (let i = 0; i < dataValor.length; i++) {
     valorData += `<tr>
       <td>${dataValor[i]}</td>
       <td>${data[dataValor[i]] === '' ? 'no tiene valor' : data[dataValor[i]] }</td>
     </tr>`;
   // console.log(datos[i]);
-  }
-  return valorData;
-};
-/* Evento para mostrar resultados en tabla*/
-mostrarTabla.addEventListener('click', (event) => {
-  areaResultado.classList.remove('ocultar');// muestra la seccion de resultados
-  areaTabla.classList.remove('ocultar');// muestra la tabla resultante
+    }
+    return valorData;
+  });
 
   // const fecha1 =  document.getElementById('fecha1').value;
   // const fecha2 =  document.getElementById('fecha2').value;
@@ -158,7 +178,7 @@ mostrarTabla.addEventListener('click', (event) => {
   // console.log(valor);
   // const pais1 = indicadorSeleccionado.split('-')[0];
   // const intervalo1 = indicadorSeleccionado.split('-')[1];
-  areaTabla.innerHTML = mostrarData(valor);
+  // areaTabla.innerHTML = mostrarData(valor);
 
   // console.log(rangoFecha(fechaDesde.value, fechaHasta.value, nombreIndicadores)) Para llamar a la funcion de seleccion de fecha
-});
+}
