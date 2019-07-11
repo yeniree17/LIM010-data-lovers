@@ -5,8 +5,6 @@ const bienvenida = document.getElementById('bienvenida');
 const portalDatos = document.getElementById('portal-datos');
 const piePagina = document.getElementById('pie-pagina');
 const encabezado = document.getElementById('encabezado');
-const areaResultado = document.getElementById('resultado');
-const areaTabla = document.getElementById('tabla');
 
 /* Obtención de parámetros del portal de Datos */
 const listaPaises = document.getElementById('lista-paises');
@@ -18,6 +16,9 @@ const arrayPaises = [{pais: 'Perú',
   code: 'CHL'}];
 const fechaDesde = document.getElementById('fecha1');
 const fechaHasta = document.getElementById('fecha2');
+const mostrarTabla = document.getElementById('consultar');
+const areaResultado = document.getElementById('resultado');
+const areaTabla = document.getElementById('tabla');
 
 /* Login del Usuario*/
 const ingreso = document.getElementById('ingresar');
@@ -51,6 +52,21 @@ ingreso.addEventListener('click', () => {
   }
 });
 /* Parametros del portal de datos */
+const opcionPaises = (arrayPaises) => {// Función para activar los input de paises de forma dinámica
+  let paisesL = '';
+  for (let i = 0; i < arrayPaises.length; i++) {
+    paisesL += `<input type="radio" class="pais ${arrayPaises[i].code}" name="paises" value='${arrayPaises[i].code}'/><label>${arrayPaises[i].pais}</label>`;
+  }
+  return paisesL;
+};
+/* funcion que despliega los nombres de los indicadores de forma dinámica cuando el usuario selecciona el país */
+const opcionesLista = (opcion) => {
+  let nombreIndicadores = '<option disabled selected>----Seleccione un indicador----</option>';
+  for (let i = 0; i < opcion.length; i++) {
+    nombreIndicadores += `<option value='${opcion[i].split('-')[0]}-${i}'>${opcion[i]}</option>`;
+  }
+  return nombreIndicadores;
+};
 /* const buscadorDatos = {
   seleccionPais1: (pais) => {
     const paisesArr = document.getElementsByName(pais);
@@ -69,7 +85,22 @@ listaPaises.addEventListener('change', (event) => { // Funcion para acceder a lo
   listaIndicadores.innerHTML = opcionesLista(nombreIndicadorPorPais(indicadorPorPais(paisSeleccionado)));
   // console.log(paisSeleccionado);
 });
-
+/* Funcion para establecer la primera fecha o rango de fecha en el input*/
+const listaFecha1 = (opcion) => {
+  let rangoDesde = '<option disabled selected>--Año--</option>';
+  for (let i = 0; i < opcion.length; i++) {
+    rangoDesde += `<option value='${opcion[i].split('-')[0]}'>${opcion[i].split('-')[0]}</option>`;
+  }
+  return rangoDesde;
+};
+/* Funcion para establecer la segunda fecha o rango de fecha en el input*/
+const listaFecha2 = (opcion) => {
+  let rangoHasta = '<option disabled selected>--Año--</option>';
+  for (let i = 0; i < opcion.length; i++) {
+    rangoHasta += `<option value='${opcion[i].split('-')[0]}'>${opcion[i].split('-')[0]}</option>`;
+  }
+  return rangoHasta;
+};
 /* funcion para vincular los indicadores con la data de años en el html */
 listaIndicadores.addEventListener('change', (event) => {
   const indicadorSeleccionado = event.target.value;
@@ -77,16 +108,42 @@ listaIndicadores.addEventListener('change', (event) => {
   const intervalo = indicadorSeleccionado.split('-')[1];
   console.log(pais);
   console.log(intervalo);
-  // const fecha = WORLDBANK[pais].indicators[indicadorSeleccionado]['data'][intervalo]; // aqui tengo q hacer el split_AQUI QUEDE OJOOO
   const fecha = WORLDBANK[pais].indicators[intervalo].data;
   const dataFecha = Object.keys(fecha);
   console.log(dataFecha);
   fechaDesde.innerHTML = listaFecha1(dataFecha);
   fechaHasta.innerHTML = listaFecha2(dataFecha);
 });
-/* Evento para mostrar resultados en tabla*/
-const mostrarTabla = document.getElementById('consultar');
+/* Evento para mostrar resultados en tabla METODO 1*/
+const generarTabla = (arrFecha, arrValor, nombrePais, indicador, id) => {
+  const box = document.getElementById(id);
+  box.innerHTML = `<tr><caption>${nombrePais} : ${indicador}</caption></tr><tr><th>Año</th><th>Dato</th></tr>`;
+  arrFecha.forEach(function (element, index) {
+      let convert = FunctionsAdd.roundN(arrValor[index], 3)
+      box.innerHTML += `<tr><td> ${element}</td><td>${convert}</td><tr>`;
+  });
+}
 
+
+/* Evento para mostrar resultados en tabla METODO 2*/
+const mostrarData = (data) => {
+  console.log(data);
+  const dataValor = Object.keys(data);
+  console.log(dataValor);
+  let valorData = `<tr>
+    <th>Año</th>
+    <th>Dato</th>
+  </tr>`;
+  for (let i = 0; i < dataValor.length; i++) {
+    valorData += `<tr>
+      <td>${dataValor[i]}</td>
+      <td>${data[dataValor[i]] === '' ? 'no tiene valor' : data[dataValor[i]] }</td>
+    </tr>`;
+  // console.log(datos[i]);
+  }
+  return valorData;
+};
+/* Evento para mostrar resultados en tabla*/
 mostrarTabla.addEventListener('click', (event) => {
   areaResultado.classList.remove('ocultar');// muestra la seccion de resultados
   areaTabla.classList.remove('ocultar');// muestra la tabla resultante
@@ -98,4 +155,6 @@ mostrarTabla.addEventListener('click', (event) => {
   // const pais1 = indicadorSeleccionado.split('-')[0];
   // const intervalo1 = indicadorSeleccionado.split('-')[1];
   areaTabla.innerHTML = mostrarData(valor);
+
+  // console.log(rangoFecha(fechaDesde.value, fechaHasta.value, nombreIndicadores)) Para llamar a la funcion de seleccion de fecha
 });
