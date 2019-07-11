@@ -61,6 +61,10 @@ const mostrarData = (data) => {
     <th>año</th>
     <th>porcentaje</th>
   </tr>`;
+  const input1 = document.getElementsByName(listaFecha1);
+  const imput2 = document.getElementsByName(listaFecha2);
+  if (imput1 >= 1960  ) {
+    
   for (let i = 0; i < dataValor.length; i++) {
     valorData += `<tr>
       <td>${dataValor[i]}</td>
@@ -70,6 +74,7 @@ const mostrarData = (data) => {
   }
   return valorData;
 };
+}
 
 
 // se agrega las funciones a nuestro objeto global window

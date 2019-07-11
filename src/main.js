@@ -91,9 +91,13 @@ mostrarTabla.addEventListener('click', (event) => {
   areaResultado.classList.remove('ocultar');// muestra la seccion de resultados
   areaTabla.classList.remove('ocultar');// muestra la tabla resultante
 
-  const fecha1 =  document.getElementById('fecha1').value;
+  // const fecha1 =  document.getElementById('fecha1').value;
+  // const fecha2 =  document.getElementById('fecha2').value;
 
-  const valor = WORLDBANK.BRA.indicators[0].data;
+
+  // const valor = establecerRango(fecha1, fecha2, indicador, pais);
+
+  // const valor = WORLDBANK.BRA.indicators[0].data;
   // console.log(valor);
   // const pais1 = indicadorSeleccionado.split('-')[0];
   // const intervalo1 = indicadorSeleccionado.split('-')[1];
