@@ -35,6 +35,7 @@ const nombreIndicadorPorPais = (array) => {
   }
   return newArrayNombreIndicador;
 };
+
 /* Funcion para establecer la primera fecha o rango de fecha en el input*/
 const listaFecha1 = (opcion) => {
   let rangoDesde = '<option disabled selected>--Año--</option>';
