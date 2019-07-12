@@ -11,15 +11,14 @@
 
 <body>
   <header class="ocultar centrar" id="encabezado">
-    <figure>
+    <figure class="logo">
       <img class="LATAM" src="./img/logo.png" alt="Logo-LATAM">
     </figure>
     <h1>LATAM Statistics 360°</h1>
-    <nav>
-        <a class="btn-nav" href="#">¿Quienes Somos? |</a>
-        <a class="btn-nav" href="#">Portal de Datos |</a>
-        <a class="btn-nav" href="#">Contáctanos</a>
-      </ul>
+    <nav class="menu">
+        <button class="btn-nav tab" type="button" name="boton" data-tab-seleccionado ="tab-1">¿Quienes Somos?</button>
+        <button class="btn-nav tab" type="button" name="boton" data-tab-seleccionado ="tab-2">Portal de Datos</button>
+        <button class="btn-nav tab" type="button" name="boton" data-tab-seleccionado ="tab-3">Contáctanos</button>
     </nav>
   </header>
 
@@ -50,8 +49,22 @@
 </section> -->
 
 <!-- Pantalla de Portal de Datos -->
-  <section class="contenedor1 ocultar" id="portal-datos">
-    <form class="fondo-blanco" id="buscador">
+  <section class="contenedor1 ocultar negrita centrado" id="portal-datos">
+   <div class="descripcion ocultar mostrar" id="info-tab1">
+     <p class="texto">Somos un equipo multidisciplinario y emprendedor, que cuenta con un staff de profesionales en el área técnica, económica y social. Nuestra misión es ofrecer a la comunidad un análisis socioeconómico de los mercados emergentes en America Latina
+     </p>
+   </div>
+   <div class="descripcion ocultar mostrar negrita centrado" id="info-tab2">
+      <p class="texto">Nuestra Base de Datos cuenta con información veráz y confiable; proveniente del Banco Mundial. El acceso a nuestro portal es gratuito y con un formato facil de entender. Te invitamos a que lo pruebes ingresando <span class="negrita blanco"><a href="#">AQUI</a></span></p>
+    </div>
+    <div class="descripcion ocultar mostrar negrita centrado" id="info-tab3">
+        <p class="texto">Para mayor información, siguenos nuestras redes sociales <a href="mailto:yeniree17@gmail.com"><img class="rrss" src="./img/mail.svg" alt="email"></a>
+          <a href="#"><img class="rrss" src="./img/facebook.svg" alt="fb"></a>
+          <a href="#"><img class="rrss" src="./img/instagram.svg" alt="ig"></a>
+          <a href="#"><img class="rrss" src="./img/twitter.svg" alt="tw"></a>
+          <a href="#"><img class="rrss" src="./img/github-logo.svg" alt="gh"></a></p>
+      </div>
+    <form class="fondo-blanco recuadro-lateral" id="buscador">
       <div id="seleccionar-pais">
        <p class="blanco parametro">PAISES</p>
         <div id= "lista-paises">
@@ -59,8 +72,8 @@
       </div>  
       <div id="seleccionar-indicador">
         <p class=" blanco parametro">INDICADOR</p>
-        <select name="indicadores" id="lista-indicadores">
-      <option disabled selected>----Seleccione un indicador----</option>
+        <select class="caja-indicadores" name="indicadores" id="lista-indicadores">
+      <option disabled selected>Seleccione un indicador</option>
         </select>
 
       </div>
@@ -77,7 +90,7 @@
         </div>
         <button class="boton negrita" type="button" id="consultar">Consultar</button>
       </form>
-      <fieldset class = "ocultar" id="resultado">
+      <fieldset class = " recuadro-resultado ocultar" id="resultado">
         <div>
           <table class= "ocultar" id="tabla"> 
           </table>
