@@ -6,8 +6,8 @@
 - [Índice](#índice)
 - [Resumen](#resumen)
 - [Investigación UX](#investigación-UX)
-    - [Historias de Usuario](#historia-de-usuario)
-    - [Prototipo de baja Fidelidad](#prototipo-baja-fidelidad)
+    - [Historias de Usuario](#historias-de-usuario)
+    - [Prototipo de baja Fidelidad](#prototipo-de-baja-fidelidad)
     - [Prototipo Final en Figma y Zeplin](#prototipo-final-en-figma-y-Zeplin)
 
 
@@ -21,7 +21,7 @@ Esta interfaz Web permitirá visualizar y manipular indicadores socioeconómicos
 
 Los principales usuarios de **LATAM Statistics 360°** son estudiantes universitarios en el área de Economía, Geografía, Trabajo Social, empresarios de PYMES, y aquellos profesionales que requieren utilizar indicadores demográficos y socioeconómicos para realizar sus estudios de mercado, investigación y otros análisis económicos.
 
-Cabe destacar, que esta Base de Datos ha sido tomada del [Banco Mundial](https://www.bancomundial.org/), una organización internacional que ofrece asesoría técnica y financimiento para que los Gobiernos y empresas privadas lleven a cabo proyectos para el Desarrollo e Inclusión Social y favorezca un crecimiento sostenibles de sus países. Sin embargo, nuestra base de datos tedrá un alcance a los Países Latinoamericanos antes mencionados. 
+Cabe destacar, que esta Base de Datos ha sido tomada del [Banco Mundial](https://www.bancomundial.org/), una organización internacional que ofrece asesoría técnica y financimiento para que los Gobiernos y empresas privadas lleven a cabo proyectos para el Desarrollo e Inclusión Social y favorezca un crecimiento sostenibles de sus países. Sin embargo, nuestra base de datos tendrá un alcance a los Países Latinoamericanos antes mencionados. 
 
 De esta manera, se facilita el acceso a la información de los usuarios que requieren datos estadísticos de forma frecuente para estar actualizados. Todo esto permite un acceso fácil de la información gratuita y estadísticas de los paises emergentes de America Latina (LATAM).
 

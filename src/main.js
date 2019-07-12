@@ -51,6 +51,44 @@ ingreso.addEventListener('click', () => {
     intento++;
   }
 });
+/* Funcionalidad del navegador para desplegar las pestañas */
+const mostrarOcultar = (event) => {
+  const tabSeleccionado = event.target.dataset.tabSeleccionado;
+  const tabUno = document.getElementById('info-tab1');
+  const tabDos = document.getElementById('info-tab2');
+  const tabTres = document.getElementById('info-tab3');
+  if (tabSeleccionado === 'tab-1') { // se oculta tab-2 y tab-3 y se muestra tab-1
+    tabUno.classList.remove('ocultar');
+    tabDos.classList.add('ocultar');
+    tabTres.classList.add('ocultar');
+    // tabUno.classList.toggle('mostrar');
+  } else if (tabSeleccionado === 'tab-2') {// se oculta tab-1 y tab-3
+    tabDos.classList.remove('ocultar');
+    // tabDos.classList.toggle('mostrar');
+    tabUno.classList.add('ocultar');
+    tabTres.classList.add('ocultar');
+  } else if (tabSeleccionado === 'tab-3') {// se muestra la 3era pestaña
+    tabTres.classList.remove('ocultar');
+    // tabTres.classList.toggle('mostrar');
+    tabDos.classList.add('ocultar');
+    tabUno.classList.add('ocultar');
+  }
+};
+const cargarPagina = () => {
+  const elementosTab = document.getElementsByClassName('tab');
+  for (let i = 0; i < elementosTab.length; i++) {
+    elementosTab[i].addEventListener('click', mostrarOcultar);
+  };
+};
+cargarPagina();
+
+// const cerrarTab = () => {
+//   document.getElementById('open-hide').classList.toggle('show');
+// };
+
+// window.onload = function() {
+//   document.getElementById('open-hide').addEventListener('click', changeClass); 
+// };
 /* Parametros del portal de datos */
 const opcionPaises = (arrayPaises) => {// Función para activar los input de paises de forma dinámica
   let paisesL = '';
@@ -115,14 +153,14 @@ listaIndicadores.addEventListener('change', (event) => {
   fechaHasta.innerHTML = listaFecha2(dataFecha);
 });
 /* Evento para mostrar resultados en tabla METODO 1*/
-// const generarTabla = (arrFecha, arrValor, nombrePais, indicador, id) => {
-//   const box = document.getElementById(id);
-//   box.innerHTML = `<tr><caption>${nombrePais} : ${indicador}</caption></tr><tr><th>Año</th><th>Dato</th></tr>`;
-//   arrFecha.forEach(function (element, index) {
-//       let convert = FunctionsAdd.roundN(arrValor[index], 3)
-//       box.innerHTML += `<tr><td> ${element}</td><td>${convert}</td><tr>`;
-//   });
-// }
+const generarTabla = (arrFecha, arrValor, nombrePais, indicador, id) => {
+  const box = document.getElementById(id);
+  box.innerHTML = `<tr><caption>${nombrePais} : ${indicador}</caption></tr><tr><th>Año</th><th>Dato</th></tr>`;
+  arrFecha.forEach(function(element, index) {
+    let convert = FunctionsAdd.roundN(arrValor[index], 3);
+    box.innerHTML += `<tr><td> ${element}</td><td>${convert}</td><tr>`;
+  });
+};
 
 
 /* Evento para mostrar resultados en tabla METODO 2*/
@@ -172,7 +210,7 @@ mostrarTabla.addEventListener('click', (event) => {
   // const fecha2 =  document.getElementById('fecha2').value;
 
 
-  // const valor = establecerRango(fecha1, fecha2, indicador, pais);
+  const fecha1 = document.getElementById('fecha1').value;
 
   // const valor = WORLDBANK.BRA.indicators[0].data;
   // console.log(valor);

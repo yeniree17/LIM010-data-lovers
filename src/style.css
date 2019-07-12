@@ -14,16 +14,33 @@ width: 100%;
 background: #009FDA;
 display: flex;
 flex-direction: column;
+justify-content: space-around;
 }
-figure {
-margin: 0 auto;    
+.menu .logo {
+display: inline-block;   
+margin-right: 1em; 
+}
+.menu .logo .LATAM {
+    vertical-align: top;
+    height: 22px;
+} 
+.logo {
+    width: 100%;
+    margin: 10px auto;
+    align-content: center;
 }
 .LATAM
  {
 width: 320px;
 }
-nav{
-    align-self: center;
+.menu {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 .btn-nav {
     line-height: normal;
@@ -31,11 +48,14 @@ nav{
     color: whitesmoke;
     font-size: 15px;
     font-weight: bold;
+    text-align: center;
+    background-color: #009FDA;
+    border: none;
 }
 
-a:hover{
+.menu :hover{
     background: #002245;
-    border-radius: 5px;
+    border-radius: 1px;
 }
 
 h1 {
@@ -54,9 +74,7 @@ h1 {
 .contenedor1 {
     height: 100vh;
     display: flex;
-    justify-content: space-between;
     flex-direction: column;  
-    align-items: center;
 }
 .recuadro {
     background: rgba(51, 121, 183, 0.8);
@@ -77,12 +95,6 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.logo {
-    width: 100%;
-    margin: 10px auto;
-    align-content: center;
-
 }
 .formulario {
     display: flex;
@@ -127,6 +139,25 @@ h1 {
     margin: 0px;
     width: 100%;
 }
+.descripcion {
+    background-color: rgba(255, 251, 251, 0.9);
+    width: 100%;
+    margin: 0 auto;
+    color: #002245;
+}
+.rrss{
+    width: 60px;
+    height: 40px;
+}
+.recuadro-lateral{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;    
+}
+.recuadro-resultado{
+    display: flex;
+    flex-flow: row wrap;    
+}
 .parametro {
     background: #0071BC;
     border-radius: 15px;
@@ -138,7 +169,6 @@ footer{
     width: 100%;
     margin: 0px auto;
     background: #009FDA;
-    
 }
 .txt-final { 
 margin: 0px;
@@ -146,7 +176,9 @@ margin: 0px;
 .ocultar {
     display: none;
 }
-
+/* .mostrar {
+    display: block;
+} */
 /*Aqui va mi pantalla grande */
 @media screen and (min-width:764px){
     body {
@@ -162,7 +194,9 @@ margin: 0px;
     .LATAM {
         width: 50%;
         }
-
+    .menu{
+        padding: 1em;
+    }
     .btn-nav {
         font-size: 25px;
         }
@@ -173,7 +207,7 @@ margin: 0px;
     }
     .logo {
         width: 100%;
-        height: 127px;
+        height: 100px;
         margin: 0px auto;
     }
     .caja {
@@ -184,6 +218,16 @@ margin: 0px;
     }
     .fondo-blanco {
         width: 34%;
+    }
+    .descripcion{
+        font-size: 25px;
+    }
+    .recuadro-lateral{
+        flex-flow: column nowrap;
+        justify-content: center;
+    }
+    .caja-indicadores{
+    width: 100%;
     }
     footer{
         display: flex;
@@ -196,4 +240,7 @@ margin: 0px;
     .ocultar {
         display: none;
     }
+    /* .mostrar {
+        display: block;
+    } */
 }
