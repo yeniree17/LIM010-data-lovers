@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body id="body" class="fondo1">
   <header class="ocultar centrar" id="encabezado">
     <figure class="logo">
       <img class="LATAM" src="./img/logo.png" alt="Logo-LATAM">
@@ -28,7 +28,6 @@
       <div class="recuadro">
          <img class="logo" src="./img/logo.png" alt="LATAMSts360">
       <form class="formulario">
-        
         <label for="usuario">Usuario</label>
         <input class="caja" id="usuario" type="text" value="LABORATORIA">
         <label for="contrasena">Contraseña</label>
@@ -41,30 +40,56 @@
           <p class="blanco negrita centrado" id="error"></p>
         </div>
       </div>
-      <p class="negrita fondo-blanco">Powered by <img src="./img/logoBM.svg" alt="banco-mundial"></p>
+      <h4 class="negrita fondo-blanco">Powered by <img src="./img/logoBM.svg" alt="banco-mundial"></h4>
   </section>
- <!-- Pantalla de Bienvenida 
-<section class="contenedor ocultar" id="bienvenida">
-<p>hola mundo</p>
-</section> -->
 
+ <!-- Pantalla de Bienvenida -->
+<section class="contenedor1 ocultar" id="bienvenida">
+  <div class="descripcion ocultar negrita centrado" id="info-tab1">
+    <h4 class="texto">Somos un equipo multidisciplinario y emprendedor, que cuenta con un staff de profesionales en el área técnica, económica y social. Nuestra misión es ofrecer a la comunidad un análisis socioeconómico de los mercados emergentes en America Latina
+    </h4>
+  </div>
+  <div class="descripcion ocultar negrita centrado" id="info-tab2">
+     <p class="texto">Nuestra Base de Datos cuenta con información veráz y confiable; proveniente del Banco Mundial. El acceso a nuestro portal es gratuito y con un formato facil de entender. Te invitamos a que lo pruebes ingresando <span class="negrita blanco"><a href="#">AQUI</a></span></p>
+   </div>
+   <div class="descripcion ocultar negrita centrado" id="info-tab3">
+       <p class="texto">Para mayor información, siguenos nuestras redes sociales <a href="mailto:yeniree17@gmail.com"><img class="rrss" src="./img/mail.svg" alt="email"></a>
+         <a href="#"><img class="rrss" src="./img/facebook.svg" alt="fb"></a>
+         <a href="#"><img class="rrss" src="./img/instagram.svg" alt="ig"></a>
+         <a href="#"><img class="rrss" src="./img/twitter.svg" alt="tw"></a>
+         <a href="#"><img class="rrss" src="./img/github-logo.svg" alt="gh"></a></p>
+     </div>
+<div class="caja-diapositivas"> 
+<div class="diapositivas">
+  <ul>
+    <li><img class="slide" src="./img/slide1.jpg" alt="Bienvenida a nuestro portal">
+    </li>
+    <li><img class="slide" src="./img/slide2.jpg" alt="¿Que es el Banco Mundial?"></li>
+    <li> <img class="slide" src="./img/slide3.jpg" alt="¿Que te ofrecemos"></li>
+  </ul>
+</div>
+</div>
+<button class="boton negrita" type="button" id="explorar">Explorar Datos</button>
+</section> 
+ 
 <!-- Pantalla de Portal de Datos -->
   <section class="contenedor1 ocultar negrita centrado" id="portal-datos">
-   <div class="descripcion ocultar mostrar" id="info-tab1">
-     <p class="texto">Somos un equipo multidisciplinario y emprendedor, que cuenta con un staff de profesionales en el área técnica, económica y social. Nuestra misión es ofrecer a la comunidad un análisis socioeconómico de los mercados emergentes en America Latina
-     </p>
-   </div>
-   <div class="descripcion ocultar mostrar negrita centrado" id="info-tab2">
-      <p class="texto">Nuestra Base de Datos cuenta con información veráz y confiable; proveniente del Banco Mundial. El acceso a nuestro portal es gratuito y con un formato facil de entender. Te invitamos a que lo pruebes ingresando <span class="negrita blanco"><a href="#">AQUI</a></span></p>
-    </div>
-    <div class="descripcion ocultar mostrar negrita centrado" id="info-tab3">
-        <p class="texto">Para mayor información, siguenos nuestras redes sociales <a href="mailto:yeniree17@gmail.com"><img class="rrss" src="./img/mail.svg" alt="email"></a>
-          <a href="#"><img class="rrss" src="./img/facebook.svg" alt="fb"></a>
-          <a href="#"><img class="rrss" src="./img/instagram.svg" alt="ig"></a>
-          <a href="#"><img class="rrss" src="./img/twitter.svg" alt="tw"></a>
-          <a href="#"><img class="rrss" src="./img/github-logo.svg" alt="gh"></a></p>
-      </div>
+      <div class="descripcion ocultar negrita centrado" id="info-tab1">
+          <h4 class="texto">Somos un equipo multidisciplinario y emprendedor, que cuenta con un staff de profesionales en el área técnica, económica y social. Nuestra misión es ofrecer a la comunidad un análisis socioeconómico de los mercados emergentes en America Latina
+          </h4>
+        </div>
+        <div class="descripcion ocultar negrita centrado" id="info-tab2">
+           <p class="texto">Nuestra Base de Datos cuenta con información veráz y confiable; proveniente del Banco Mundial. El acceso a nuestro portal es gratuito y con un formato facil de entender. Te invitamos a que lo pruebes ingresando <span class="negrita blanco"><a href="#">AQUI</a></span></p>
+         </div>
+         <div class="descripcion ocultar negrita centrado" id="info-tab3">
+             <p class="texto">Para mayor información, siguenos nuestras redes sociales <a href="mailto:yeniree17@gmail.com"><img class="rrss" src="./img/mail.svg" alt="email"></a>
+               <a href="#"><img class="rrss" src="./img/facebook.svg" alt="fb"></a>
+               <a href="#"><img class="rrss" src="./img/instagram.svg" alt="ig"></a>
+               <a href="#"><img class="rrss" src="./img/twitter.svg" alt="tw"></a>
+               <a href="#"><img class="rrss" src="./img/github-logo.svg" alt="gh"></a></p>
+           </div>
     <form class="fondo-blanco recuadro-lateral" id="buscador">
+      <h4 class="txt-final">Parámetros de Búsqueda</h4>
       <div id="seleccionar-pais">
        <p class="blanco parametro">PAISES</p>
         <div id= "lista-paises">

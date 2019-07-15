@@ -1,13 +1,15 @@
 body {
-    background: url(./img/LatinAmericanCities.jpg),linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-    background-repeat: no-repeat;
     margin:0;
     padding: 0;
     height: 100vh;
     font-family: "Open Sans", "sans-serif";
     box-sizing: border-box; 
+    background-repeat: no-repeat;
     display: flex;
     flex-flow: column;
+}
+.fondo1{
+background-image: url(./img/LatinAmericanCities.jpg),linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }
 .centrar {
 width: 100%;
@@ -146,22 +148,54 @@ h1 {
     color: #002245;
 }
 .rrss{
-    width: 60px;
-    height: 40px;
+    width: 40px;
+    height: 30px;
 }
 .recuadro-lateral{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;    
 }
+.caja-indicadores{
+    width: 90%;
+    }
 .recuadro-resultado{
     display: flex;
     flex-flow: row wrap;    
 }
 .parametro {
     background: #0071BC;
+    width: 90%;
     border-radius: 15px;
+    margin: 5px auto;
 }
+.caja-diapositivas {
+    width : 95%;
+    /* max-width: 1000px; */
+    margin: 20px auto;
+    overflow: hidden;
+}
+.diapositivas {
+    width: 50%;
+} 
+.diapositivas ul {
+    list-style: none;
+    width: 300%;
+    display: flex;
+    animation: slide 20s infinite alternate;
+    animation-timing-function: ease-in;
+} 
+@keyframes slide {
+    0%{margin-left: 0%;}
+    30%{margin-left: 0%;}
+    35%{margin-left: -100%;}
+    65%{margin-left: -100%;}
+    70%{margin-left: -200%;}
+    100%{margin-left: -200%;}
+}
+.slide {
+width: 50%;
+} 
 footer{
     font-size: 15px;
     color: whitesmoke;
@@ -173,12 +207,19 @@ footer{
 .txt-final { 
 margin: 0px;
 }
+.fondo2{
+    background: whitesmoke;
+}
+.fondo3{
+    background:url('./img/fondo3.jpg');
+    background-repeat: no-repeat;
+  }
 .ocultar {
     display: none;
 }
-/* .mostrar {
+.mostrar {
     display: block;
-} */
+}
 /*Aqui va mi pantalla grande */
 @media screen and (min-width:764px){
     body {
@@ -226,8 +267,10 @@ margin: 0px;
         flex-flow: column nowrap;
         justify-content: center;
     }
+    .parametro {
+        width: 80%;}
     .caja-indicadores{
-    width: 100%;
+    width: 80%;
     }
     footer{
         display: flex;
@@ -240,7 +283,7 @@ margin: 0px;
     .ocultar {
         display: none;
     }
-    /* .mostrar {
+    .mostrar {
         display: block;
-    } */
+    }
 }

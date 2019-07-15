@@ -32,10 +32,10 @@ ingreso.addEventListener('click', () => {
   
   if (contrasena === clave && nombreUsuario === nombre) {
     logueo.classList.add('ocultar'); // se oculta la seccion de inicio
-    portalDatos.classList.remove('ocultar');// muestra la seccion de buscador
+    bienvenida.classList.remove('ocultar');// muestra la seccion de bienvenida
     piePagina.classList.remove('ocultar');// muestra el footer
     encabezado.classList.remove('ocultar');// muestra el encabezado y navegador
-    listaPaises.innerHTML = opcionPaises(arrayPaises); // muestra los inputs de paisesLatam
+    document.getElementById('body').classList.toggle('fondo2');
     intento = 0;
   } else if (nombre === '' || contrasena === '') {
     document.getElementById('usuario').focus();
@@ -58,18 +58,18 @@ const mostrarOcultar = (event) => {
   const tabDos = document.getElementById('info-tab2');
   const tabTres = document.getElementById('info-tab3');
   if (tabSeleccionado === 'tab-1') { // se oculta tab-2 y tab-3 y se muestra tab-1
-    tabUno.classList.remove('ocultar');
+    // tabUno.classList.remove('ocultar');
     tabDos.classList.add('ocultar');
     tabTres.classList.add('ocultar');
-    // tabUno.classList.toggle('mostrar');
+    tabUno.classList.toggle('mostrar'); 
   } else if (tabSeleccionado === 'tab-2') {// se oculta tab-1 y tab-3
-    tabDos.classList.remove('ocultar');
-    // tabDos.classList.toggle('mostrar');
+    // tabDos.classList.remove('ocultar');
+    tabDos.classList.toggle('mostrar');
     tabUno.classList.add('ocultar');
     tabTres.classList.add('ocultar');
   } else if (tabSeleccionado === 'tab-3') {// se muestra la 3era pestaña
-    tabTres.classList.remove('ocultar');
-    // tabTres.classList.toggle('mostrar');
+    // tabTres.classList.remove('ocultar');
+    tabTres.classList.toggle('mostrar');
     tabDos.classList.add('ocultar');
     tabUno.classList.add('ocultar');
   }
@@ -82,13 +82,16 @@ const cargarPagina = () => {
 };
 cargarPagina();
 
-// const cerrarTab = () => {
-//   document.getElementById('open-hide').classList.toggle('show');
-// };
+/* Segunda Pantalla-Bienvenida */
+const explorar = document.getElementById('explorar');
+explorar.addEventListener('click', () => {
+  bienvenida.classList.add('ocultar'); // se oculta la seccion de bienvenida
+  portalDatos.classList.remove('ocultar');// muestra la seccion de buscador
+  document.getElementById('body').classList.remove('fondo1', 'fondo2');
+  document.getElementById('body').classList.add('fondo3');
+  listaPaises.innerHTML = opcionPaises(arrayPaises); // muestra los inputs de paisesLatam
+});
 
-// window.onload = function() {
-//   document.getElementById('open-hide').addEventListener('click', changeClass); 
-// };
 /* Parametros del portal de datos */
 const opcionPaises = (arrayPaises) => {// Función para activar los input de paises de forma dinámica
   let paisesL = '';
