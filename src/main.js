@@ -19,8 +19,8 @@ const fechaHasta = document.getElementById('fecha2');
 const mostrarTabla = document.getElementById('consultar');
 const areaResultado = document.getElementById('resultado');
 const areaTabla = document.getElementById('tabla');
-const botonesOrdenar = document.getElementById('botonesOrdenar');
-const btnAscend = document.getElementById('btnAscend');
+const btnDescend = document.getElementById('btn-Descend');
+const btnAscend = document.getElementById('btn-Ascend');
 
 /* DATA */
 let dataIndicador;
@@ -179,15 +179,15 @@ mostrarTabla.addEventListener('click', (event) => {
     if (key >= input1 && key <= input2) {
       valorData += `<tr>
       <td>${key}</td>
-      <td>${value === '' ? 'No tiene valor' : value}</td>
+      <td>${value === '' ? 'S.I' : value.toFixed(2)}</td>
     </tr>`;
     }
   });
   areaTabla.innerHTML = valorData;
 });
 /* Evento del boton para ordenar*/
-btnAscend.addEventListener('click', (event) => {
-  let arrayValoresOrdenados = '';
-});
+// btnAscend.addEventListener('click', (event) => {
+//   let arrayValoresOrdenados = '';
+// });
 
 
