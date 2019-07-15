@@ -110,17 +110,7 @@ const opcionesLista = (opcion) => {
   }
   return nombreIndicadores;
 };
-/* const buscadorDatos = {
-  seleccionPais1: (pais) => {
-    const paisesArr = document.getElementsByName(pais);
-    let seleccionUsuario = '';
-    for (let i = 0; i < paisesArr.length; i++) {
-      if (paisesArr[i].checked === true) {
-        seleccionUsuario = paisesArr[i].value;
-        return seleccionUsuario;
-      }
-    }
-  },
+
 /* funcion para capturar la seleccion del pais desde el input radio */
 //  Devuelve los paises para seleccionarlos con radio 
 listaPaises.addEventListener('change', (event) => { // Funcion para acceder a los indicadores cuando el usuario escoge un pais
@@ -146,26 +136,24 @@ const listaFecha2 = (opcion) => {
 };
 /* funcion para vincular los indicadores con la data de años en el html */
 listaIndicadores.addEventListener('change', (event) => {
-
   const indicadorSeleccionado = event.target.value;
   const pais = indicadorSeleccionado.split('-')[0];
   const intervalo = indicadorSeleccionado.split('-')[1];
   
 
-  //const dataAnios = WORLDBANK[pais].indicators[intervalo].data; 
-  dataIndicador = indicadorData(pais,intervalo);
+  // const dataAnios = WORLDBANK[pais].indicators[intervalo].data; 
+  dataIndicador = indicadorData(pais, intervalo);
 
-  const dataAnios =dataIndicador.data; 
+  const dataAnios = dataIndicador.data; 
   const arrayAnios = Object.keys(dataAnios);
 
   fechaDesde.innerHTML = listaFecha1(arrayAnios);
   fechaHasta.innerHTML = listaFecha2(arrayAnios);
-
 });
 
   
 /* Evento para mostrar resultados en tabla*/      
-//const mostrarTabla = document.getElementById('consultar');
+// const mostrarTabla = document.getElementById('consultar');
 mostrarTabla.addEventListener('click', (event) => {
   areaResultado.classList.remove('ocultar');// muestra la seccion de resultados  
   areaTabla.classList.remove('ocultar');// muestra la tabla resultante
@@ -177,27 +165,26 @@ mostrarTabla.addEventListener('click', (event) => {
   let input2 = parseInt(fechaHasta.value);
   console.log(fechaHasta.value);
 
-  let valorData = ''
+  let valorData = `<tr>
+  <th>Año</th>
+  <th>Dato</th>
+  </tr>`;
 
   console.log(dataIndicador.data);
   // console.log(dataValor);
   Object.entries(dataIndicador.data).forEach(([key, value]) => { 
-    if ( key >= input1 && key <= input2 ) {
+    if (key >= input1 && key <= input2) {
       valorData += `<tr>
       <td>${key}</td>
       <td>${value === '' ? 'No tiene valor' : value}</td>
     </tr>`;
     }
   });
-    areaTabla.innerHTML = valorData;
-  });
+  areaTabla.innerHTML = valorData;
+});
 /* Evento del boton para ordenar*/
-btnAscend.addEventListener('click',(event) => {
-  
+btnAscend.addEventListener('click', (event) => {
   let arrayValoresOrdenados = '';
-  arrayValoresOrdenados.
-
-
 });
 
 

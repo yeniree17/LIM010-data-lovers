@@ -19,7 +19,6 @@ const indicadorData = (pais, indicador) => {
 };
 
 
-
 /* Funcion para mostrar tabla*/
 // Funcion para mostrar los valores por los años seleccionados
 const rangoFecha = (fechaInicial, fechaFinal, objAno) => {
@@ -37,5 +36,6 @@ const rangoFecha = (fechaInicial, fechaFinal, objAno) => {
 window.bancoMundial = {
   nombreIndicadorPorPais: nombreIndicadorPorPais, 
   indicadorPorPais: indicadorPorPais,
+  
   rangoFecha: rangoFecha,
 };
