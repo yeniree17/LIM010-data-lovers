@@ -154,7 +154,7 @@ h1 {
     flex-flow: row wrap;
     justify-content: center;    
 }
-.recuadro-resultado{
+.botonesOrden{
     display: flex;
     flex-flow: row wrap;    
 }

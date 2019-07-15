@@ -19,6 +19,11 @@ const fechaHasta = document.getElementById('fecha2');
 const mostrarTabla = document.getElementById('consultar');
 const areaResultado = document.getElementById('resultado');
 const areaTabla = document.getElementById('tabla');
+const botonesOrdenar = document.getElementById('botonesOrdenar');
+const btnAscend = document.getElementById('btnAscend');
+
+/* DATA */
+let dataIndicador;
 
 /* Login del Usuario*/
 const ingreso = document.getElementById('ingresar');
@@ -141,82 +146,58 @@ const listaFecha2 = (opcion) => {
 };
 /* funcion para vincular los indicadores con la data de años en el html */
 listaIndicadores.addEventListener('change', (event) => {
+
   const indicadorSeleccionado = event.target.value;
   const pais = indicadorSeleccionado.split('-')[0];
   const intervalo = indicadorSeleccionado.split('-')[1];
-  console.log(pais);
-  console.log(intervalo);
-  const fecha = WORLDBANK[pais].indicators[intervalo].data;
-  const dataFecha = Object.keys(fecha);
-  console.log(dataFecha);
-  fechaDesde.innerHTML = listaFecha1(dataFecha);
-  fechaHasta.innerHTML = listaFecha2(dataFecha);
+  
+
+  //const dataAnios = WORLDBANK[pais].indicators[intervalo].data; 
+  dataIndicador = indicadorData(pais,intervalo);
+
+  const dataAnios =dataIndicador.data; 
+  const arrayAnios = Object.keys(dataAnios);
+
+  fechaDesde.innerHTML = listaFecha1(arrayAnios);
+  fechaHasta.innerHTML = listaFecha2(arrayAnios);
+
 });
-/* Evento para mostrar resultados en tabla METODO 1*/
-const generarTabla = (arrFecha, arrValor, nombrePais, indicador, id) => {
-  const box = document.getElementById(id);
-  box.innerHTML = `<tr><caption>${nombrePais} : ${indicador}</caption></tr><tr><th>Año</th><th>Dato</th></tr>`;
-  arrFecha.forEach(function(element, index) {
-    let convert = FunctionsAdd.roundN(arrValor[index], 3);
-    box.innerHTML += `<tr><td> ${element}</td><td>${convert}</td><tr>`;
-  });
-};
 
-
-/* Evento para mostrar resultados en tabla METODO 2*/
-const mostrarData = (data) => {
-  console.log(data);
-  const dataValor = Object.keys(data);
-  console.log(dataValor);
-  let valorData = `<tr>
-    <th>Año</th>
-    <th>Dato</th>
-  </tr>`;
   
-  //   let imput1 = Object.keys(fecha1);
-  //     console.log(imput1);
-  //   let imput2 = parseInt(document.getElementById(fecha2).value);
-  // for (let i = 0; i < dataValor.length; i++) {
-  //   valorData += `<tr>
-  //     <td>${dataValor[i]}</td>
-  //     <td>${data[dataValor[i]] === '' ? 'no tiene valor' : data[dataValor[i]] }</td>
-  //   </tr>`;
-  // // console.log(datos[i]);
-  //   }
-  //   return valorData;
-  // };
-  
-/* Evento para mostrar resultados en tabla*/
-const mostrarTabla = document.getElementById('mostrarTabla');
+/* Evento para mostrar resultados en tabla*/      
+//const mostrarTabla = document.getElementById('consultar');
 mostrarTabla.addEventListener('click', (event) => {
-  areaResultado.classList.remove('ocultar');// muestra la seccion de resultados
+  areaResultado.classList.remove('ocultar');// muestra la seccion de resultados  
   areaTabla.classList.remove('ocultar');// muestra la tabla resultante
+  botonesOrdenar.classList.remove('ocultar');
 
-      let imput1 = document.getElementById(fecha1);
-      console.log(imput1);
-    let imput2 = parseInt(document.getElementById(fecha2).value);
-    console.log(imput2);
-  for (let i = 0; i < dataValor.length; i++) {
-    valorData += `<tr>
-      <td>${dataValor[i]}</td>
-      <td>${data[dataValor[i]] === '' ? 'no tiene valor' : data[dataValor[i]] }</td>
+  let input1 = parseInt(fechaDesde.value);
+  console.log(fechaDesde.value);
+
+  let input2 = parseInt(fechaHasta.value);
+  console.log(fechaHasta.value);
+
+  let valorData = ''
+
+  console.log(dataIndicador.data);
+  // console.log(dataValor);
+  Object.entries(dataIndicador.data).forEach(([key, value]) => { 
+    if ( key >= input1 && key <= input2 ) {
+      valorData += `<tr>
+      <td>${key}</td>
+      <td>${value === '' ? 'No tiene valor' : value}</td>
     </tr>`;
-  // console.log(datos[i]);
     }
-    return valorData;
   });
+    areaTabla.innerHTML = valorData;
+  });
+/* Evento del boton para ordenar*/
+btnAscend.addEventListener('click',(event) => {
+  
+  let arrayValoresOrdenados = '';
+  arrayValoresOrdenados.
 
-  // const fecha1 =  document.getElementById('fecha1').value;
-  // const fecha2 =  document.getElementById('fecha2').value;
+
+});
 
 
-  const fecha1 = document.getElementById('fecha1').value;
-
-  // const valor = WORLDBANK.BRA.indicators[0].data;
-  // console.log(valor);
-  // const pais1 = indicadorSeleccionado.split('-')[0];
-  // const intervalo1 = indicadorSeleccionado.split('-')[1];
-  // areaTabla.innerHTML = mostrarData(valor);
-
-  // console.log(rangoFecha(fechaDesde.value, fechaHasta.value, nombreIndicadores)) Para llamar a la funcion de seleccion de fecha
-}
