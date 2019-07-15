@@ -19,6 +19,11 @@ const fechaHasta = document.getElementById('fecha2');
 const mostrarTabla = document.getElementById('consultar');
 const areaResultado = document.getElementById('resultado');
 const areaTabla = document.getElementById('tabla');
+const botonesOrdenar = document.getElementById('botonesOrdenar');
+const btnAscend = document.getElementById('btnAscend');
+
+/* DATA */
+let dataIndicador;
 
 /* Login del Usuario*/
 const ingreso = document.getElementById('ingresar');
@@ -105,17 +110,7 @@ const opcionesLista = (opcion) => {
   }
   return nombreIndicadores;
 };
-/* const buscadorDatos = {
-  seleccionPais1: (pais) => {
-    const paisesArr = document.getElementsByName(pais);
-    let seleccionUsuario = '';
-    for (let i = 0; i < paisesArr.length; i++) {
-      if (paisesArr[i].checked === true) {
-        seleccionUsuario = paisesArr[i].value;
-        return seleccionUsuario;
-      }
-    }
-  },
+
 /* funcion para capturar la seleccion del pais desde el input radio */
 //  Devuelve los paises para seleccionarlos con radio 
 listaPaises.addEventListener('change', (event) => { // Funcion para acceder a los indicadores cuando el usuario escoge un pais
@@ -144,55 +139,52 @@ listaIndicadores.addEventListener('change', (event) => {
   const indicadorSeleccionado = event.target.value;
   const pais = indicadorSeleccionado.split('-')[0];
   const intervalo = indicadorSeleccionado.split('-')[1];
-  console.log(pais);
-  console.log(intervalo);
-  const fecha = WORLDBANK[pais].indicators[intervalo].data;
-  const dataFecha = Object.keys(fecha);
-  console.log(dataFecha);
-  fechaDesde.innerHTML = listaFecha1(dataFecha);
-  fechaHasta.innerHTML = listaFecha2(dataFecha);
+  
+
+  // const dataAnios = WORLDBANK[pais].indicators[intervalo].data; 
+  dataIndicador = indicadorData(pais, intervalo);
+
+  const dataAnios = dataIndicador.data; 
+  const arrayAnios = Object.keys(dataAnios);
+
+  fechaDesde.innerHTML = listaFecha1(arrayAnios);
+  fechaHasta.innerHTML = listaFecha2(arrayAnios);
 });
-/* Evento para mostrar resultados en tabla METODO 1*/
-const generarTabla = (arrFecha, arrValor, nombrePais, indicador, id) => {
-  const box = document.getElementById(id);
-  box.innerHTML = `<tr><caption>${nombrePais} : ${indicador}</caption></tr><tr><th>Año</th><th>Dato</th></tr>`;
-  arrFecha.forEach(function(element, index) {
-    let convert = FunctionsAdd.roundN(arrValor[index], 3);
-    box.innerHTML += `<tr><td> ${element}</td><td>${convert}</td><tr>`;
-  });
-};
 
-
-/* Evento para mostrar resultados en tabla METODO 2*/
-const mostrarData = (data) => {
-  console.log(data);
-  const dataValor = Object.keys(data);
-  console.log(dataValor);
-  let valorData = `<tr>
-    <th>Año</th>
-    <th>Dato</th>
-  </tr>`;
-  for (let i = 0; i < dataValor.length; i++) {
-    valorData += `<tr>
-      <td>${dataValor[i]}</td>
-      <td>${data[dataValor[i]] === '' ? 'no tiene valor' : data[dataValor[i]] }</td>
-    </tr>`;
-  // console.log(datos[i]);
-  }
-  return valorData;
-};
-/* Evento para mostrar resultados en tabla*/
+  
+/* Evento para mostrar resultados en tabla*/      
+// const mostrarTabla = document.getElementById('consultar');
 mostrarTabla.addEventListener('click', (event) => {
-  areaResultado.classList.remove('ocultar');// muestra la seccion de resultados
+  areaResultado.classList.remove('ocultar');// muestra la seccion de resultados  
   areaTabla.classList.remove('ocultar');// muestra la tabla resultante
+  botonesOrdenar.classList.remove('ocultar');
 
-  const fecha1 = document.getElementById('fecha1').value;
+  let input1 = parseInt(fechaDesde.value);
+  console.log(fechaDesde.value);
 
-  const valor = WORLDBANK.BRA.indicators[0].data;
-  // console.log(valor);
-  // const pais1 = indicadorSeleccionado.split('-')[0];
-  // const intervalo1 = indicadorSeleccionado.split('-')[1];
-  areaTabla.innerHTML = mostrarData(valor);
+  let input2 = parseInt(fechaHasta.value);
+  console.log(fechaHasta.value);
 
-  // console.log(rangoFecha(fechaDesde.value, fechaHasta.value, nombreIndicadores)) Para llamar a la funcion de seleccion de fecha
+  let valorData = `<tr>
+  <th>Año</th>
+  <th>Dato</th>
+  </tr>`;
+
+  console.log(dataIndicador.data);
+  // console.log(dataValor);
+  Object.entries(dataIndicador.data).forEach(([key, value]) => { 
+    if (key >= input1 && key <= input2) {
+      valorData += `<tr>
+      <td>${key}</td>
+      <td>${value === '' ? 'No tiene valor' : value}</td>
+    </tr>`;
+    }
+  });
+  areaTabla.innerHTML = valorData;
 });
+/* Evento del boton para ordenar*/
+btnAscend.addEventListener('click', (event) => {
+  let arrayValoresOrdenados = '';
+});
+
+
