@@ -105,30 +105,30 @@
         <div id="seleccionar-periodo">
         <p class=" blanco parametro">PERIODO</p>
         <label class="etiqueta">Desde:</label>
-        <select name="desde" id="fecha1">
-          <option disabled selected>--Año--</option>
+        <select name="fecha1" id="fecha1">
+          <option disabled value = '0' selected>--Año desde--</option>
         </select>
         <label class="etiqueta">Hasta:</label>
-        <select name="hasta" id="fecha2">
-          <option disabled selected>--Año--</option>
+        <select name="fecha2" id="fecha2">
+          <option disabled  value = '0' selected >--Año hasta--</option>
         </select>
         </div>
-        <button class="boton negrita" type="button" id="consultar">Consultar</button>
+        <button class="boton negrita" type="button" id="consultar">CONSULTAR</button>
       </form>
-      <fieldset class = " recuadro-resultado ocultar" id="resultado">
-        <div>
+      <!-- <fieldset class = " recuadroResultado ocultar" id="resultado"> -->
+        <div class = " recuadroResultado ocultar" id="resultado">
           <table class= "ocultar" id="tabla"> 
           </table>
-          <div class="ocultar" id="orden-promedio">
-          <button class="boton negrita" type="button" id="orden-ascend">Orden Ascendente</button>
-          <button class="boton negrita" type="button" id="Orden-descend">Orden Descendente</button>
+          <div class="ocultar" id="botonesOrdenar">
+          <button class="boton negrita" type="button" id="btnAscend">Orden Ascendente</button>
+          <button class="boton negrita" type="button" id="btnDescend">Orden Descendente</button>
           <button class="boton negrita" type="button" id="promedio">Calcular Promedio</button>
           <p id="valor-promedio">El promedio es:</p>
           </div>
           <canvas class = "ocultar" id="grafico">
-            </canvas>
+          </canvas>
         </div>
-      </fieldset>
+      <!-- </fieldset> -->
   </section>
  </main>
   <!--Pie de pagina-->

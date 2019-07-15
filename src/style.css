@@ -159,7 +159,7 @@ h1 {
 .caja-indicadores{
     width: 90%;
     }
-.recuadro-resultado{
+.botonesOrden{
     display: flex;
     flex-flow: row wrap;    
 }
