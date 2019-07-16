@@ -22,8 +22,14 @@ const areaTabla = document.getElementById('tabla');
 const botonesOrdenar = document.getElementById('botonesOrdenar');
 const btnAscend = document.getElementById('btnAscend');
 
+let input1 = '';
+ // console.log(fechaDesde.value);
+
+  let input2 = '';
+
 /* DATA */
 let dataIndicador;
+
 
 /* Login del Usuario*/
 const ingreso = document.getElementById('ingresar');
@@ -113,7 +119,22 @@ const opcionesLista = (opcion) => {
   }
   return nombreIndicadores;
 };
-
+// Funcion Ordenar Ascendente
+const asdValor = () =>{
+  nuevoArray.sort((valor1, valor2) => {
+    if (valor1.value > valor2.value) return 1;
+    if (valor1.value < valor2.value) return -1;
+    return 0;
+  });
+};
+// Funcion Ordenar Descendente
+const desValor = (dataD) =>{
+  dataD.sort((valor1, valor2) => {
+    if (valor1.value > valor2.value) return -1;
+    if (valor1.value < valor2.value) return 1;
+    return 0;
+  });
+};
 /* funcion para capturar la seleccion del pais desde el input radio */
 //  Devuelve los paises para seleccionarlos con radio 
 listaPaises.addEventListener('change', (event) => { // Funcion para acceder a los indicadores cuando el usuario escoge un pais
@@ -149,45 +170,53 @@ listaIndicadores.addEventListener('change', (event) => {
 
   const dataAnios = dataIndicador.data; 
   const arrayAnios = Object.keys(dataAnios);
+  // console.log(arrayAnios);
 
   fechaDesde.innerHTML = listaFecha1(arrayAnios);
   fechaHasta.innerHTML = listaFecha2(arrayAnios);
 });
 
-  
+let nuevoArray = [];
 /* Evento para mostrar resultados en tabla*/      
 // const mostrarTabla = document.getElementById('consultar');
 mostrarTabla.addEventListener('click', (event) => {
   areaResultado.classList.remove('ocultar');// muestra la seccion de resultados  
   areaTabla.classList.remove('ocultar');// muestra la tabla resultante
-  botonesOrdenar.classList.remove('ocultar');
-
-  let input1 = parseInt(fechaDesde.value);
-  console.log(fechaDesde.value);
-
-  let input2 = parseInt(fechaHasta.value);
-  console.log(fechaHasta.value);
-
+  botonesOrdenar.classList.remove('ocultar');  
+  // console.log(fechaHasta.value);
+  input1 = parseInt(fechaDesde.value);
+  // console.log(fechaDesde.value);
+  input2 = parseInt(fechaHasta.value);
+ 
   let valorData = `<tr>
   <th>Año</th>
   <th>Dato</th>
   </tr>`;
-
-  console.log(dataIndicador.data);
-  // console.log(dataValor);
-  Object.entries(dataIndicador.data).forEach(([key, value]) => { 
+  nuevoArray = [];
+  Object.entries(dataIndicador.data).forEach(([key, value]) => {
     if (key >= input1 && key <= input2) {
       valorData += `<tr>
       <td>${key}</td>
       <td>${value === '' ? 'No tiene valor' : value}</td>
-    </tr>`;
+      </tr>`;
+      nuevoArray.push({key: key, value: value});
     }
   });
   areaTabla.innerHTML = valorData;
 });
 /* Evento del boton para ordenar*/
-btnAscend.addEventListener('click', (event) => {
-  let arrayValoresOrdenados = '';
+btnAscend.addEventListener('click', () => {
+  console.log(asdValor(nuevoArray));
+  // valorData = `<tr>
+  // <th>Año</th>
+  // <th>Dato</th>
+  // </tr>`;
+  // for (let x; x < nuevoArray; x++) {
+  //   valorData += `<tr>
+  //     <td>${nuevoArray[x].key}</td>
+  //     <td>${value === '' ? 'No tiene valor' : nuevoArray[x].value}</td>
+  //     </tr>`;
+
+  // }
+  // areaTabla.innerHTML = valorData; 
 });
-
-
