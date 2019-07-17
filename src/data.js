@@ -18,23 +18,29 @@ const indicadorData = (pais, indicador) => {
   return indicadorData;
 };
 
-// Funcion para mostrar los valores por los años seleccionados
-// const rangoFecha = (fechaInicial, fechaFinal, objAno) => {
-//   let rango = [];
-//   const arrFecha = Object.keys(objAno);
-//   const arrDato = Object.values(objAno);
-//   for (let i = 0; i <= arrFecha.length; i++) {
-//     if (arrFecha[i] >= fechaInicial && arrYears[i] <= fechaFinal) {
-//       rango.push([arrFecha[i], arrDato[i]]);
-//     } 
-//   }
-//   return rango;
-// };
+// Funcion Ordenar Ascendente
+const asdValor = (data) =>{
+  return data.sort((valor1, valor2) => {
+    if (valor1.value > valor2.value) return 1;
+    if (valor1.value < valor2.value) return -1;
+    return 0;
+  });
+};
+// Funcion Ordenar Descendente
+const desValor = (dataD) =>{
+  return dataD.sort((valor1, valor2) => {
+    if (valor1.value > valor2.value) return -1;
+    if (valor1.value < valor2.value) return 1;
+    return 0;
+  });
+};
 // se agrega las funciones a nuestro objeto global window
 window.bancoMundial = {
   nombreIndicadorPorPais: nombreIndicadorPorPais, 
   indicadorPorPais: indicadorPorPais,
   indicadorData: indicadorData,
+  asdValor: asdValor,
+  desValor: desValor,
 
   // rangoFecha: rangoFecha,
 };
