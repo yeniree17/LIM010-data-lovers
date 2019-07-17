@@ -31,7 +31,7 @@ const botonesOrdenar = document.getElementById('botones-ordenar');
 const btnAscend = document.getElementById('btn-ascend');
 const btnDescend = document.getElementById('btn-descend');
 const btnPromedio = document.getElementById('promedio');
-const areaPromedio = document.getElementById('valor-promedio');
+const resultadoPromedio = document.getElementById('valor-promedio');
 
 let input1 = '';
 // console.log(fechaDesde.value);
