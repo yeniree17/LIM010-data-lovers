@@ -30,6 +30,8 @@ const areaTabla = document.getElementById('tabla');
 const botonesOrdenar = document.getElementById('botones-ordenar');
 const btnAscend = document.getElementById('btn-ascend');
 const btnDescend = document.getElementById('btn-descend');
+
+const areaPromedio = document.getElementById('boton-promedio');
 const btnPromedio = document.getElementById('promedio');
 const resultadoPromedio = document.getElementById('valor-promedio');
 
@@ -178,6 +180,7 @@ mostrarTabla.addEventListener('click', () => {
   areaResultado.classList.remove('ocultar');// muestra la seccion de resultados  
   areaTabla.classList.remove('ocultar');// muestra la tabla resultante
   botonesOrdenar.classList.remove('ocultar');
+  areaPromedio.classList.remove('ocultar');
   // console.log(fechaHasta.value);
   input1 = parseInt(fechaDesde.value);
   // console.log(fechaDesde.value);
@@ -201,7 +204,6 @@ mostrarTabla.addEventListener('click', () => {
     // nuevoArray[key] = value;
     // nuevoArray.push({key: key, value: value});
   });
-  console.log(nuevoArray);
   areaTabla.innerHTML = valorData;
 });
 /* Evento del boton para ordenar*/
@@ -238,12 +240,12 @@ btnDescend.addEventListener('click', () => {
 btnPromedio.addEventListener('click', (event) => {
   event.preventDefault();
   let valorPromedio = [];
-
-  for (let i = 0; i < dato.length; i++) {
-    valorPromedio.push(dato[i]);
+  for (let i = 0; i < nuevoArray.length; i++) {
+    valorPromedio.push(nuevoArray[i]);
+    // let promedioCalculado = calcularProm(valorPromedio);
   }
+  console.log(calcularProm(valorPromedio));
+  areaPromedio.innerHTML = 'El Promedio es:' + valorPromedio.toFixed(2);
   console.log(valorPromedio);
-  let promedioCalculado = window.bancoMundial.calcularProm(valorPromedio);
-  areaPromedio.innerHTML = 'El Promedio es:' + promedioCalculado.toFixed(2);
-  console.log(promedioCalculado);
+  console.log(calcularProm(nuevoArray));
 });
