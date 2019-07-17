@@ -30,7 +30,6 @@ const areaTabla = document.getElementById('tabla');
 const botonesOrdenar = document.getElementById('botones-ordenar');
 const btnAscend = document.getElementById('btn-ascend');
 const btnDescend = document.getElementById('btn-descend');
-
 const areaPromedio = document.getElementById('boton-promedio');
 const btnPromedio = document.getElementById('promedio');
 const resultadoPromedio = document.getElementById('valor-promedio');
