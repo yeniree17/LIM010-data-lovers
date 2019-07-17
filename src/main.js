@@ -25,7 +25,7 @@ const btnAscend = document.getElementById('btnAscend');
 let input1 = '';
  // console.log(fechaDesde.value);
 
-  let input2 = '';
+let input2 = '';
 
 /* DATA */
 let dataIndicador;
@@ -126,6 +126,7 @@ const asdValor = () =>{
     if (valor1.value < valor2.value) return -1;
     return 0;
   });
+  console.log(nuevoArray);
 };
 // Funcion Ordenar Descendente
 const desValor = (dataD) =>{
@@ -199,14 +200,28 @@ mostrarTabla.addEventListener('click', (event) => {
       <td>${key}</td>
       <td>${value === '' ? 'No tiene valor' : value}</td>
       </tr>`;
-      nuevoArray.push({key: key, value: value});
+      // nuevoArray.push({key: key, value: value});
     }
+    nuevoArray[key] = value;
+    
   });
+  console.log(nuevoArray);
   areaTabla.innerHTML = valorData;
 });
 /* Evento del boton para ordenar*/
 btnAscend.addEventListener('click', () => {
-  console.log(asdValor(nuevoArray));
+ let nuevoArray2 = asdValor(nuevoArray);
+
+  // Object.entries(nuevoArray2).forEach(([key, value]) => {
+    for (let i = 0; i < nuevoArray.length; i++) {
+    
+      nuevoArray2 += `<tr>
+      <td>${key}</td>
+      <td>${value === '' ? 'No tiene valor' : value}</td>
+      </tr>`;
+      // nuevoArray.push({key: key, value: value});
+    
+    };
   // valorData = `<tr>
   // <th>Año</th>
   // <th>Dato</th>
@@ -218,5 +233,5 @@ btnAscend.addEventListener('click', () => {
   //     </tr>`;
 
   // }
-  // areaTabla.innerHTML = valorData; 
+  areaTabla.innerHTML = nuevoArray2;
 });
