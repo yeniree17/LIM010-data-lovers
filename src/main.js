@@ -19,8 +19,12 @@ const fechaHasta = document.getElementById('fecha2');
 const mostrarTabla = document.getElementById('consultar');
 const areaResultado = document.getElementById('resultado');
 const areaTabla = document.getElementById('tabla');
-const btnDescend = document.getElementById('btn-Descend');
-const btnAscend = document.getElementById('btn-Ascend');
+const botonesOrdenar = document.getElementById('botones-ordenar');
+const btnAscend = document.getElementById('btn-ascend');
+const btnDescend = document.getElementById('btn-descend');
+const tablaOrdenada = document.getElementById('tabla-ordenada');
+const btnPromedio = document.getElementById('promedio');
+const areaPromedio = document.getElementById('valor-promedio');
 
 /* DATA */
 let dataIndicador;
@@ -153,41 +157,52 @@ listaIndicadores.addEventListener('change', (event) => {
   fechaDesde.innerHTML = listaFecha1(arrayAnios);
   fechaHasta.innerHTML = listaFecha2(arrayAnios);
 });
-
-  
 /* Evento para mostrar resultados en tabla*/      
 // const mostrarTabla = document.getElementById('consultar');
-mostrarTabla.addEventListener('click', (event) => {
+mostrarTabla.addEventListener('click', () => {
   areaResultado.classList.remove('ocultar');// muestra la seccion de resultados  
   areaTabla.classList.remove('ocultar');// muestra la tabla resultante
   botonesOrdenar.classList.remove('ocultar');
-
-  let input1 = parseInt(fechaDesde.value);
+  let input1 = parseInt(fechaDesde.value);// muestra la primera fecha seleccionada
   console.log(fechaDesde.value);
-
-  let input2 = parseInt(fechaHasta.value);
+  let input2 = parseInt(fechaHasta.value);// muestra la segunda fecha seleccionada
   console.log(fechaHasta.value);
-
   let valorData = `<tr>
   <th>Año</th>
   <th>Dato</th>
   </tr>`;
-
-  console.log(dataIndicador.data);
+  let primerArray = new Array(0);
+  console.log(dataIndicador.data); 
   // console.log(dataValor);
-  Object.entries(dataIndicador.data).forEach(([key, value]) => { 
+  // console.log(Object.entries(dataIndicador.data)); muestra todos los valores de data en un array
+  primerArray = Object.entries(dataIndicador.data).forEach(([key, value]) => { 
     if (key >= input1 && key <= input2) {
+      primerArray.push([key, value]); 
+      console.log(primerArray);
       valorData += `<tr>
       <td>${key}</td>
       <td>${value === '' ? 'S.I' : value.toFixed(2)}</td>
     </tr>`;
     }
   });
-  areaTabla.innerHTML = valorData;
+  areaTabla.innerHTML = valorData;// pinta en pantalla la tabla con el rango de fecha seleccionado
+  console.log(valorData);
 });
-/* Evento del boton para ordenar*/
-// btnAscend.addEventListener('click', (event) => {
-//   let arrayValoresOrdenados = '';
+// /* Evento del boton para ordenar*/
+// btnAscend.addEventListener('click', () => {
+//   tablaOrdenada.classList.remove('ocultar');// muestra la tabla ordenada ascendentemente
 // });
 
+/* Evento para calcular el promedio de los datos*/
+btnPromedio.addEventListener('click', (event) => {
+  event.preventDefault();
+  let valorPromedio = [];
 
+  for (let i = 0; i < dato.length; i++) {
+    valorPromedio.push(dato[i]);
+  }
+  console.log(valorPromedio);
+  let promedioCalculado = window.bancoMundial.calcularProm(valorPromedio);
+  areaPromedio.innerHTML = 'El Promedio es:' + promedioCalculado.toFixed(2);
+  console.log(promedioCalculado);
+});
