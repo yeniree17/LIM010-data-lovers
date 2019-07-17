@@ -18,11 +18,20 @@ const indicadorData = (pais, indicador) => {
   return indicadorData;
 };
 
-/* Funcion para ordenar datos*/
-const ordenarDatos = (objeto) => {
-  const arrayOrdenado = Object.entries(objeto); 
-  return arrayOrdenado.sort((valorA, valorB) => {
-    return valorA - valorB;
+// Funcion Ordenar Ascendente
+const asdValor = (data) =>{
+  return data.sort((valor1, valor2) => {
+    if (valor1.value > valor2.value) return 1;
+    if (valor1.value < valor2.value) return -1;
+    return 0;
+  });
+};
+// Funcion Ordenar Descendente
+const desValor = (dataD) =>{
+  return dataD.sort((valor1, valor2) => {
+    if (valor1.value > valor2.value) return -1;
+    if (valor1.value < valor2.value) return 1;
+    return 0;
   });
 };
 
@@ -40,9 +49,9 @@ const calcularProm = (array) => {
 // se agrega las funciones a nuestro objeto global window
 window.bancoMundial = {
   indicadorPorPais: indicadorPorPais,
-  nombreIndicadorPorPais: nombreIndicadorPorPais, 
   indicadorData: indicadorData,
-  // rangoFecha: rangoFecha,
-  ordenarDatos: ordenarDatos,
+  asdValor: asdValor,
+  desValor: desValor,
+  nombreIndicadorPorPais: nombreIndicadorPorPais, 
   calcularProm: calcularProm,
 };

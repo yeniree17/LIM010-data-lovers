@@ -9,11 +9,19 @@ const encabezado = document.getElementById('encabezado');
 /* Obtención de parámetros del portal de Datos */
 const listaPaises = document.getElementById('lista-paises');
 const listaIndicadores = document.getElementById('lista-indicadores');
-const arrayPaises = [{pais: 'Perú',
-  code: 'PER'}, {pais: 'Brasil',
-  code: 'BRA'}, {pais: 'Mexico',
-  code: 'MEX'}, {pais: 'Chile',
-  code: 'CHL'}];
+const arrayPaises = [{
+  pais: 'Perú',
+  code: 'PER'
+}, {
+  pais: 'Brasil',
+  code: 'BRA'
+}, {
+  pais: 'Mexico',
+  code: 'MEX'
+}, {
+  pais: 'Chile',
+  code: 'CHL'
+}];
 const fechaDesde = document.getElementById('fecha1');
 const fechaHasta = document.getElementById('fecha2');
 const mostrarTabla = document.getElementById('consultar');
@@ -22,9 +30,13 @@ const areaTabla = document.getElementById('tabla');
 const botonesOrdenar = document.getElementById('botones-ordenar');
 const btnAscend = document.getElementById('btn-ascend');
 const btnDescend = document.getElementById('btn-descend');
-const tablaOrdenada = document.getElementById('tabla-ordenada');
 const btnPromedio = document.getElementById('promedio');
 const areaPromedio = document.getElementById('valor-promedio');
+
+let input1 = '';
+// console.log(fechaDesde.value);
+
+let input2 = '';
 
 /* DATA */
 let dataIndicador;
@@ -34,11 +46,11 @@ const ingreso = document.getElementById('ingresar');
 let intento = 0;
 
 ingreso.addEventListener('click', () => {
-  const nombre = document.getElementById('usuario').value;     
-  const contrasena = document.getElementById('contrasena').value; 
+  const nombre = document.getElementById('usuario').value;
+  const contrasena = document.getElementById('contrasena').value;
   const clave = 'LABORATORIA';
   const nombreUsuario = 'LABORATORIA';
-  
+
   if (contrasena === clave && nombreUsuario === nombre) {
     logueo.classList.add('ocultar'); // se oculta la seccion de inicio
     bienvenida.classList.remove('ocultar');// muestra la seccion de bienvenida
@@ -70,7 +82,7 @@ const mostrarOcultar = (event) => {
     // tabUno.classList.remove('ocultar');
     tabDos.classList.add('ocultar');
     tabTres.classList.add('ocultar');
-    tabUno.classList.toggle('mostrar'); 
+    tabUno.classList.toggle('mostrar');
   } else if (tabSeleccionado === 'tab-2') {// se oculta tab-1 y tab-3
     // tabDos.classList.remove('ocultar');
     tabDos.classList.toggle('mostrar');
@@ -146,52 +158,81 @@ listaIndicadores.addEventListener('change', (event) => {
   const indicadorSeleccionado = event.target.value;
   const pais = indicadorSeleccionado.split('-')[0];
   const intervalo = indicadorSeleccionado.split('-')[1];
-  
+
 
   // const dataAnios = WORLDBANK[pais].indicators[intervalo].data; 
   dataIndicador = indicadorData(pais, intervalo);
 
-  const dataAnios = dataIndicador.data; 
+  const dataAnios = dataIndicador.data;
   const arrayAnios = Object.keys(dataAnios);
+  // console.log(arrayAnios);
 
   fechaDesde.innerHTML = listaFecha1(arrayAnios);
   fechaHasta.innerHTML = listaFecha2(arrayAnios);
 });
-/* Evento para mostrar resultados en tabla*/      
+
+let nuevoArray = [];
+/* Evento para mostrar resultados en tabla*/
 // const mostrarTabla = document.getElementById('consultar');
 mostrarTabla.addEventListener('click', () => {
   areaResultado.classList.remove('ocultar');// muestra la seccion de resultados  
   areaTabla.classList.remove('ocultar');// muestra la tabla resultante
   botonesOrdenar.classList.remove('ocultar');
-  let input1 = parseInt(fechaDesde.value);// muestra la primera fecha seleccionada
-  console.log(fechaDesde.value);
-  let input2 = parseInt(fechaHasta.value);// muestra la segunda fecha seleccionada
-  console.log(fechaHasta.value);
+  // console.log(fechaHasta.value);
+  input1 = parseInt(fechaDesde.value);
+  // console.log(fechaDesde.value);
+  input2 = parseInt(fechaHasta.value);
+
   let valorData = `<tr>
   <th>Año</th>
   <th>Dato</th>
   </tr>`;
-  let primerArray = new Array(0);
-  console.log(dataIndicador.data); 
-  // console.log(dataValor);
-  // console.log(Object.entries(dataIndicador.data)); muestra todos los valores de data en un array
-  primerArray = Object.entries(dataIndicador.data).forEach(([key, value]) => { 
+  Object.entries(dataIndicador.data).forEach(([key, value]) => {
     if (key >= input1 && key <= input2) {
-      primerArray.push([key, value]); 
-      console.log(primerArray);
       valorData += `<tr>
       <td>${key}</td>
-      <td>${value === '' ? 'S.I' : value.toFixed(2)}</td>
-    </tr>`;
+      <td>${value === '' ? 'No tiene valor' : value}</td>
+      </tr>`;
+      nuevoArray.push({ 
+        key: key, 
+        value: value 
+      });
     }
+    // nuevoArray[key] = value;
+    // nuevoArray.push({key: key, value: value});
   });
-  areaTabla.innerHTML = valorData;// pinta en pantalla la tabla con el rango de fecha seleccionado
-  console.log(valorData);
+  console.log(nuevoArray);
+  areaTabla.innerHTML = valorData;
 });
-// /* Evento del boton para ordenar*/
-// btnAscend.addEventListener('click', () => {
-//   tablaOrdenada.classList.remove('ocultar');// muestra la tabla ordenada ascendentemente
-// });
+/* Evento del boton para ordenar*/
+
+btnAscend.addEventListener('click', () => {
+  areaTabla.innerHTML = '';
+  let strYears = '';
+  const newArr = asdValor(nuevoArray);
+  for (let x = 0; x < newArr.length; x++) {
+    strYears += `<tr>
+      <td>${newArr[x].key}</td>
+      <td>${newArr[x].value === '' ? 'No tiene valor' : newArr[x].value}</td>
+      </tr>`;
+  }
+  areaTabla.innerHTML = strYears;
+});
+
+btnDescend.addEventListener('click', () => {
+  areaTabla.innerHTML = '';
+  let strYears = '';
+  const newArr = desValor(nuevoArray);
+  for (let x = 0; x < newArr.length; x++) {
+    strYears += `<tr>
+      <td>${newArr[x].key}</td>
+      <td>${newArr[x].value === '' ? 'No tiene valor' : newArr[x].value}</td>
+      </tr>`;
+  }
+  areaTabla.innerHTML = strYears;
+
+  console.log(desValor(nuevoArray));
+});
 
 /* Evento para calcular el promedio de los datos*/
 btnPromedio.addEventListener('click', (event) => {
