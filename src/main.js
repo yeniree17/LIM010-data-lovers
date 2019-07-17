@@ -27,9 +27,11 @@ const fechaHasta = document.getElementById('fecha2');
 const mostrarTabla = document.getElementById('consultar');
 const areaResultado = document.getElementById('resultado');
 const areaTabla = document.getElementById('tabla');
-const botonesOrdenar = document.getElementById('botonesOrdenar');
-const btnAscend = document.getElementById('btnAscend');
-const btnDescend = document.getElementById('btnDescend');
+const botonesOrdenar = document.getElementById('botones-ordenar');
+const btnAscend = document.getElementById('btn-ascend');
+const btnDescend = document.getElementById('btn-descend');
+const btnPromedio = document.getElementById('promedio');
+const areaPromedio = document.getElementById('valor-promedio');
 
 let input1 = '';
 // console.log(fechaDesde.value);
@@ -38,7 +40,6 @@ let input2 = '';
 
 /* DATA */
 let dataIndicador;
-
 
 /* Login del Usuario*/
 const ingreso = document.getElementById('ingresar');
@@ -173,7 +174,7 @@ listaIndicadores.addEventListener('change', (event) => {
 let nuevoArray = [];
 /* Evento para mostrar resultados en tabla*/
 // const mostrarTabla = document.getElementById('consultar');
-mostrarTabla.addEventListener('click', (event) => {
+mostrarTabla.addEventListener('click', () => {
   areaResultado.classList.remove('ocultar');// muestra la seccion de resultados  
   areaTabla.classList.remove('ocultar');// muestra la tabla resultante
   botonesOrdenar.classList.remove('ocultar');
@@ -231,4 +232,18 @@ btnDescend.addEventListener('click', () => {
   areaTabla.innerHTML = strYears;
 
   console.log(desValor(nuevoArray));
+});
+
+/* Evento para calcular el promedio de los datos*/
+btnPromedio.addEventListener('click', (event) => {
+  event.preventDefault();
+  let valorPromedio = [];
+
+  for (let i = 0; i < dato.length; i++) {
+    valorPromedio.push(dato[i]);
+  }
+  console.log(valorPromedio);
+  let promedioCalculado = window.bancoMundial.calcularProm(valorPromedio);
+  areaPromedio.innerHTML = 'El Promedio es:' + promedioCalculado.toFixed(2);
+  console.log(promedioCalculado);
 });

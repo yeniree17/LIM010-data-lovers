@@ -40,19 +40,19 @@
           <p class="blanco negrita centrado" id="error"></p>
         </div>
       </div>
-      <h4 class="negrita fondo-blanco">Powered by <img src="./img/logoBM.svg" alt="banco-mundial"></h4>
+      <h4 class="banco-mundial">Powered by <img src="./img/logoBM.svg" alt="banco-mundial"></h4>
   </section>
 
  <!-- Pantalla de Bienvenida -->
 <section class="contenedor1 ocultar" id="bienvenida">
-  <div class="descripcion ocultar negrita centrado" id="info-tab1">
+  <div class="descripcion ocultar negrita" id="info-tab1">
     <h4 class="texto">Somos un equipo multidisciplinario y emprendedor, que cuenta con un staff de profesionales en el área técnica, económica y social. Nuestra misión es ofrecer a la comunidad un análisis socioeconómico de los mercados emergentes en America Latina
     </h4>
   </div>
-  <div class="descripcion ocultar negrita centrado" id="info-tab2">
+  <div class="descripcion ocultar negrita" id="info-tab2">
      <p class="texto">Nuestra Base de Datos cuenta con información veráz y confiable; proveniente del Banco Mundial. El acceso a nuestro portal es gratuito y con un formato facil de entender. Te invitamos a que lo pruebes ingresando <span class="negrita blanco"><a href="#">AQUI</a></span></p>
    </div>
-   <div class="descripcion ocultar negrita centrado" id="info-tab3">
+   <div class="descripcion ocultar negrita" id="info-tab3">
        <p class="texto">Para mayor información, siguenos nuestras redes sociales <a href="mailto:yeniree17@gmail.com"><img class="rrss" src="./img/mail.svg" alt="email"></a>
          <a href="#"><img class="rrss" src="./img/facebook.svg" alt="fb"></a>
          <a href="#"><img class="rrss" src="./img/instagram.svg" alt="ig"></a>
@@ -62,23 +62,24 @@
 <div class="caja-diapositivas"> 
 <div class="diapositivas">
   <ul>
-    <li><img class="slide" src="./img/slide1.jpg" alt="Bienvenida a nuestro portal">
+    <li><img class="slide" src="./img/img1.png" alt="Bienvenida a nuestro portal">
     </li>
-    <li><img class="slide" src="./img/slide2.jpg" alt="¿Que es el Banco Mundial?"></li>
-    <li> <img class="slide" src="./img/slide3.jpg" alt="¿Que te ofrecemos"></li>
+    <li><img class="slide" src="./img/img2.png" alt="¿Que es el Banco Mundial?"></li>
+    <li> <img class="slide" src="./img/img3.png" alt="¿Que te ofrecemos"></li>
   </ul>
 </div>
+<button class="boton negrita" type="button" id="explorar">EXPLORAR DATOS</button>
 </div>
-<button class="boton negrita" type="button" id="explorar">Explorar Datos</button>
+
 </section> 
  
 <!-- Pantalla de Portal de Datos -->
-  <section class="contenedor1 ocultar negrita centrado" id="portal-datos">
-      <div class="descripcion ocultar negrita centrado" id="info-tab1">
+  <section class="contenedor1 ocultar negrita" id="portal-datos">
+      <div class="descripcion ocultar negrita" id="info-tab1">
           <h4 class="texto">Somos un equipo multidisciplinario y emprendedor, que cuenta con un staff de profesionales en el área técnica, económica y social. Nuestra misión es ofrecer a la comunidad un análisis socioeconómico de los mercados emergentes en America Latina
           </h4>
         </div>
-        <div class="descripcion ocultar negrita centrado" id="info-tab2">
+        <div class="descripcion ocultar negrita" id="info-tab2">
            <p class="texto">Nuestra Base de Datos cuenta con información veráz y confiable; proveniente del Banco Mundial. El acceso a nuestro portal es gratuito y con un formato facil de entender. Te invitamos a que lo pruebes ingresando <span class="negrita blanco"><a href="#">AQUI</a></span></p>
          </div>
          <div class="descripcion ocultar negrita centrado" id="info-tab3">
@@ -89,12 +90,11 @@
                <a href="#"><img class="rrss" src="./img/github-logo.svg" alt="gh"></a></p>
            </div>
     <form class="fondo-blanco recuadro-lateral" id="buscador">
-      <h4 class="txt-final">Parámetros de Búsqueda</h4>
       <div id="seleccionar-pais">
        <p class="blanco parametro">PAISES</p>
-        <div id= "lista-paises">
+        <div class= "listado" id= "lista-paises">
         </div>
-      </div>  
+      </div>   
       <div id="seleccionar-indicador">
         <p class=" blanco parametro">INDICADOR</p>
         <select class="caja-indicadores" name="indicadores" id="lista-indicadores">
@@ -106,27 +106,30 @@
         <p class=" blanco parametro">PERIODO</p>
         <label class="etiqueta">Desde:</label>
         <select name="fecha1" id="fecha1">
-          <option disabled value = '0' selected>--Año desde--</option>
+          <option disabled value = '0' selected>--Año--</option>
         </select>
         <label class="etiqueta">Hasta:</label>
         <select name="fecha2" id="fecha2">
-          <option disabled  value = '0' selected >--Año hasta--</option>
+          <option disabled  value = '0' selected >--Año--</option>
         </select>
         </div>
         <button class="boton negrita" type="button" id="consultar">CONSULTAR</button>
       </form>
       <!-- <fieldset class = " recuadroResultado ocultar" id="resultado"> -->
-        <div class = " recuadroResultado ocultar" id="resultado">
+        <div class = " recuadro-resultado ocultar" id="resultado">
           <table class= "ocultar" id="tabla"> 
           </table>
-          <div class="ocultar" id="botonesOrdenar">
-          <button class="boton negrita" type="button" id="btnAscend">Orden Ascendente</button>
-          <button class="boton negrita" type="button" id="btnDescend">Orden Descendente</button>
+          <div class="ocultar" id="botones-ordenar">
+          <button class="boton negrita" type="button" id="btn-ascend">Orden Ascendente</button>
+          <button class="boton negrita" type="button" id="btn-descend">Orden Descendente</button>
+          <table class="ocultar" id="tabla-ordenada"></table>
+          </div>
+          <div class="ocultar" id="boton-promedio">
           <button class="boton negrita" type="button" id="promedio">Calcular Promedio</button>
           <p id="valor-promedio">El promedio es:</p>
           </div>
-          <canvas class = "ocultar" id="grafico">
-          </canvas>
+          <!-- <canvas class = "ocultar" id="grafico">
+          </canvas> -->
         </div>
       <!-- </fieldset> -->
   </section>
@@ -134,7 +137,7 @@
   <!--Pie de pagina-->
   <footer class="negrita ocultar" id="pie-pagina">
     <p class="txt-final">© Todos los Derechos Reservados | Accede a la Base de Datos <span class=""><a href="https://datos.bancomundial.org/">Banco Mundial</a></span></p>
-    <p class="txt-final">Desarrollado por Rosly-Sisley 2019</p>
+    <p class="txt-final">Desarrollado por Rosly-Sisley Company 2019</p>
   </footer>
 
   <script src="./data/worldbank/worldbank.js"></script>
