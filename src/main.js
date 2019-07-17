@@ -199,7 +199,7 @@ mostrarTabla.addEventListener('click', (event) => {
       <td>${key}</td>
       <td>${value === '' ? 'No tiene valor' : value}</td>
       </tr>`;
-      nuevoArray.push({key: key, value: value});
+      nuevoArray.push({key: key, alue: value});
     }
   });
   areaTabla.innerHTML = valorData;
