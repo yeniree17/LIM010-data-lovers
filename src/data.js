@@ -38,13 +38,11 @@ const desValor = (dataD) =>{
 /* Funcion para obtener promedio*/
 const calcularProm = (array) => {
   let prom = [];
-  array.forEach(elemento => {
-    let suma = elemento.reduce((previo, actual) => {
-      return (parseInt(previo) + parseInt(actual));
-    }, 0); 
-    let formulaPromedio = suma / elemento.length;
-    prom.push(formulaPromedio.toFixed(2));
-  });
+  let suma = array.reduce((previo, actual) => {
+    return (parseInt(previo) + parseInt(actual));
+  }, 0); 
+  let formulaPromedio = suma / array.length;
+  prom.push(formulaPromedio.toFixed(2));
 };
 // se agrega las funciones a nuestro objeto global window
 window.bancoMundial = {
