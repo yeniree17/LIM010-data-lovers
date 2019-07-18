@@ -177,6 +177,7 @@ let nuevoArray = [];
 /* Evento para mostrar resultados en tabla*/
 // const mostrarTabla = document.getElementById('consultar');
 mostrarTabla.addEventListener('click', () => {
+  nuevoArray = [];
   areaResultado.classList.remove('ocultar');// muestra la seccion de resultados  
   areaTabla.classList.remove('ocultar');// muestra la tabla resultante
   botonesOrdenar.classList.remove('ocultar');
@@ -194,7 +195,7 @@ mostrarTabla.addEventListener('click', () => {
     if (key >= input1 && key <= input2) {
       valorData += `<tr>
       <td>${key}</td>
-      <td>${value === '' ? 'No tiene valor' : value}</td>
+      <td>${value === '' ? 'No tiene valor' : value.toFixed(2)}</td>
       </tr>`;
       nuevoArray.push({ 
         key: key, 
@@ -215,7 +216,7 @@ btnAscend.addEventListener('click', () => {
   for (let x = 0; x < newArr.length; x++) {
     strYears += `<tr>
       <td>${newArr[x].key}</td>
-      <td>${newArr[x].value === '' ? 'No tiene valor' : newArr[x].value}</td>
+      <td>${newArr[x].value === '' ? 'No tiene valor' : newArr[x].value.toFixed(2)}</td>
       </tr>`;
   }
   areaTabla.innerHTML = strYears;
@@ -228,7 +229,7 @@ btnDescend.addEventListener('click', () => {
   for (let x = 0; x < newArr.length; x++) {
     strYears += `<tr>
       <td>${newArr[x].key}</td>
-      <td>${newArr[x].value === '' ? 'No tiene valor' : newArr[x].value}</td>
+      <td>${newArr[x].value === '' ? 'No tiene valor' : newArr[x].value.toFixed(2)}</td>
       </tr>`;
   }
   areaTabla.innerHTML = strYears;
@@ -237,15 +238,7 @@ btnDescend.addEventListener('click', () => {
 });
 
 /* Evento para calcular el promedio de los datos*/
-btnPromedio.addEventListener('click', (event) => {
-  event.preventDefault();
-  let valorPromedio = [];
-  for (let i = 0; i < nuevoArray.length; i++) {
-    valorPromedio.push(nuevoArray[i]);
-    // let promedioCalculado = calcularProm(valorPromedio);
-  }
-  console.log(calcularProm(valorPromedio));
-  areaPromedio.innerHTML = 'El Promedio es:' + valorPromedio.toFixed(2);
-  console.log(valorPromedio);
-  console.log(calcularProm(nuevoArray));
+
+btnPromedio.addEventListener('click', () => {
+  areaPromedio.innerHTML = `El Promedio es: ${calcularProm(nuevoArray)}` ;
 });
