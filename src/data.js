@@ -1,7 +1,7 @@
 /* Manejo de data */
 // Funcion para acceder a los indicadores cuando el usuario escoge un pais
-const indicadorPorPais = (pais) => { 
-  const arrayIndicadores = WORLDBANK[pais].indicators;
+const indicadorPorPais = (data, pais) => { 
+  const arrayIndicadores = data[pais].indicators;
   return arrayIndicadores;
 };
 // Función para mostrar los nombres indicadores en un nuevo array
@@ -13,8 +13,8 @@ const nombreIndicadorPorPais = (array) => {
   return arregloNombreIndicador;
 };
 
-const indicadorData = (pais, indicador) => { 
-  let indicadorData = WORLDBANK[pais].indicators[indicador]; 
+const indicadorData = (data, pais, indicador) => { 
+  let indicadorData = data[pais].indicators[indicador]; 
   return indicadorData;
 };
 
