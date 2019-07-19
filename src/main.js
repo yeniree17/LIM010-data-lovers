@@ -166,7 +166,7 @@ const opcionesLista = (opcion) => {
 //  Devuelve los paises para seleccionarlos con radio 
 listaPaises.addEventListener('change', (event) => { // Funcion para acceder a los indicadores cuando el usuario escoge un pais
   const paisSeleccionado = event.target.value;
-  listaIndicadores.innerHTML = opcionesLista(nombreIndicadorPorPais(indicadorPorPais(paisSeleccionado)));
+  listaIndicadores.innerHTML = opcionesLista(nombreIndicadorPorPais(indicadorPorPais(WORLDBANK, paisSeleccionado)));
   // console.log(paisSeleccionado);
 });
 /* Funcion para establecer la primera fecha o rango de fecha en el input*/
@@ -193,7 +193,7 @@ listaIndicadores.addEventListener('change', (event) => {
 
 
   // const dataAnios = WORLDBANK[pais].indicators[intervalo].data; 
-  dataIndicador = indicadorData(pais, intervalo);
+  dataIndicador = indicadorData(WORLDBANK, pais, intervalo);
 
   const dataAnios = dataIndicador.data;
   const arrayAnios = Object.keys(dataAnios);
