@@ -242,7 +242,10 @@ mostrarTabla.addEventListener('click', () => {
 
 btnAscend.addEventListener('click', () => {
   areaTabla.innerHTML = '';
-  let strYears = '';
+  let strYears = `<tr>
+  <th>Año</th>
+  <th>Dato</th>
+  </tr>`;
   const newArr = asdValor(nuevoArray);
   for (let x = 0; x < newArr.length; x++) {
     strYears += `<tr>
@@ -255,7 +258,10 @@ btnAscend.addEventListener('click', () => {
 
 btnDescend.addEventListener('click', () => {
   areaTabla.innerHTML = '';
-  let strYears = '';
+  let strYears = `<tr>
+  <th>Año</th>
+  <th>Dato</th>
+  </tr>`;
   const newArr = desValor(nuevoArray);
   for (let x = 0; x < newArr.length; x++) {
     strYears += `<tr>
@@ -270,5 +276,5 @@ btnDescend.addEventListener('click', () => {
 
 /* Evento para calcular el promedio de los datos*/
 btnPromedio.addEventListener('click', () => {
-  areaPromedio.innerHTML = `El Promedio es: ${calcularProm(nuevoArray)}` ;
+  resultadoPromedio.innerHTML = `El Promedio es: ${calcularProm(nuevoArray)}` ;
 });
