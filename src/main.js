@@ -167,7 +167,7 @@ const opcionesLista = (opcion) => {
 listaPaises.addEventListener('change', (event) => { // Funcion para acceder a los indicadores cuando el usuario escoge un pais
   const paisSeleccionado = event.target.value;
   listaIndicadores.innerHTML = opcionesLista(nombreIndicadorPorPais(indicadorPorPais(paisSeleccionado)));
-  // console.log(paisSeleccionado);
+  console.log(nombreIndicadorPorPais(indicadorPorPais(paisSeleccionado)));
 });
 /* Funcion para establecer la primera fecha o rango de fecha en el input*/
 const listaFecha1 = (opcion) => {
