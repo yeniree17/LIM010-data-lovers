@@ -34,15 +34,15 @@ const desValor = (dataD) =>{
     return 0;
   });
 };
-
 /* Funcion para obtener promedio*/
+let suma = 0;
+let acum = 0;
 const calcularProm = (array) => {
-  let prom = [];
-  let suma = array.reduce((previo, actual) => {
-    return (parseInt(previo) + parseInt(actual));
-  }, 0); 
-  let formulaPromedio = suma / array.length;
-  prom.push(formulaPromedio.toFixed(2));
+  array.forEach(elem => {
+    suma += elem.value; 
+    acum ++; // numero de valores 
+  });
+  return (suma / acum).toFixed(2);
 };
 // se agrega las funciones a nuestro objeto global window
 window.bancoMundial = {

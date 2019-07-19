@@ -30,7 +30,8 @@
     "no-array-constructor": 1
   },
   "globals": {
-    "example": false
+    "WORLDBANK": false,
+    "bancoMundial": false
   }
 }
 

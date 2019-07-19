@@ -73,7 +73,7 @@ ingreso.addEventListener('click', () => {
     intento++;
   }
 });
-/* Funcionalidad del navegador para desplegar las pestañas */
+/* Funcionalidad del navegador para desplegar las pestañas en la pantalla de bienvenida */
 const mostrarOcultar = (event) => {
   const tabSeleccionado = event.target.dataset.tabSeleccionado;
   const tabUno = document.getElementById('info-tab1');
@@ -103,6 +103,37 @@ const cargarPagina = () => {
   };
 };
 cargarPagina();
+
+/* Funcionalidad del navegador para desplegar las pestañas en la pantalla de bienvenida */
+const mostrarOcultar1 = (event) => {
+  const tabSeleccionado = event.target.dataset.tabSeleccionado;
+  const tabUno = document.getElementById('info-tab4');
+  const tabDos = document.getElementById('info-tab5');
+  const tabTres = document.getElementById('info-tab6');
+  if (tabSeleccionado === 'tab-1') { // se oculta tab-2 y tab-3 y se muestra tab-1
+    // tabUno.classList.remove('ocultar');
+    tabDos.classList.add('ocultar');
+    tabTres.classList.add('ocultar');
+    tabUno.classList.toggle('mostrar');
+  } else if (tabSeleccionado === 'tab-2') {// se oculta tab-1 y tab-3
+    // tabDos.classList.remove('ocultar');
+    tabDos.classList.toggle('mostrar');
+    tabUno.classList.add('ocultar');
+    tabTres.classList.add('ocultar');
+  } else if (tabSeleccionado === 'tab-3') {// se muestra la 3era pestaña
+    // tabTres.classList.remove('ocultar');
+    tabTres.classList.toggle('mostrar');
+    tabDos.classList.add('ocultar');
+    tabUno.classList.add('ocultar');
+  }
+};
+const cargarPagina1 = () => {
+  const elementosTab = document.getElementsByClassName('tab');
+  for (let i = 0; i < elementosTab.length; i++) {
+    elementosTab[i].addEventListener('click', mostrarOcultar1);
+  };
+};
+cargarPagina1();
 
 /* Segunda Pantalla-Bienvenida */
 const explorar = document.getElementById('explorar');
@@ -176,6 +207,7 @@ let nuevoArray = [];
 /* Evento para mostrar resultados en tabla*/
 // const mostrarTabla = document.getElementById('consultar');
 mostrarTabla.addEventListener('click', () => {
+  nuevoArray = [];
   areaResultado.classList.remove('ocultar');// muestra la seccion de resultados  
   areaTabla.classList.remove('ocultar');// muestra la tabla resultante
   botonesOrdenar.classList.remove('ocultar');
@@ -193,7 +225,7 @@ mostrarTabla.addEventListener('click', () => {
     if (key >= input1 && key <= input2) {
       valorData += `<tr>
       <td>${key}</td>
-      <td>${value === '' ? 'No tiene valor' : value}</td>
+      <td>${value === '' ? 'No tiene valor' : value.toFixed(2)}</td>
       </tr>`;
       nuevoArray.push({ 
         key: key, 
@@ -204,6 +236,7 @@ mostrarTabla.addEventListener('click', () => {
     // nuevoArray.push({key: key, value: value});
   });
   areaTabla.innerHTML = valorData;
+  console.log(nuevoArray);
 });
 /* Evento del boton para ordenar*/
 
@@ -214,7 +247,7 @@ btnAscend.addEventListener('click', () => {
   for (let x = 0; x < newArr.length; x++) {
     strYears += `<tr>
       <td>${newArr[x].key}</td>
-      <td>${newArr[x].value === '' ? 'No tiene valor' : newArr[x].value}</td>
+      <td>${newArr[x].value === '' ? 'No tiene valor' : newArr[x].value.toFixed(2)}</td>
       </tr>`;
   }
   areaTabla.innerHTML = strYears;
@@ -227,7 +260,7 @@ btnDescend.addEventListener('click', () => {
   for (let x = 0; x < newArr.length; x++) {
     strYears += `<tr>
       <td>${newArr[x].key}</td>
-      <td>${newArr[x].value === '' ? 'No tiene valor' : newArr[x].value}</td>
+      <td>${newArr[x].value === '' ? 'No tiene valor' : newArr[x].value.toFixed(2)}</td>
       </tr>`;
   }
   areaTabla.innerHTML = strYears;
@@ -236,15 +269,6 @@ btnDescend.addEventListener('click', () => {
 });
 
 /* Evento para calcular el promedio de los datos*/
-btnPromedio.addEventListener('click', (event) => {
-  event.preventDefault();
-  let valorPromedio = [];
-  for (let i = 0; i < nuevoArray.length; i++) {
-    valorPromedio.push(nuevoArray[i]);
-    // let promedioCalculado = calcularProm(valorPromedio);
-  }
-  console.log(calcularProm(valorPromedio));
-  areaPromedio.innerHTML = 'El Promedio es:' + valorPromedio.toFixed(2);
-  console.log(valorPromedio);
-  console.log(calcularProm(nuevoArray));
+btnPromedio.addEventListener('click', () => {
+  areaPromedio.innerHTML = `El Promedio es: ${calcularProm(nuevoArray)}` ;
 });
