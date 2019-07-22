@@ -2,7 +2,7 @@ global.window = global;
 require('../src/data');
 require('./data.spec.js');
 
-const dataWorldBank = {
+const input1 = {
   'PER': {
     'indicators': [
       {
@@ -206,7 +206,7 @@ const dataWorldBank = {
     ]
   }
 };
-const arrayIndicadoresTest = [
+const output1 = [
   {
     'data': {
       '1960': '',
@@ -407,55 +407,124 @@ const arrayIndicadoresTest = [
   },
 ];
 
-const valorSalida = ['PER-Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)', 'PER-Fuerza laboral con educación intermedia (% del total)', 'PER-Fuerza laboral con educación intermedia, varones (% de la fuerza laboral masculina)'];
-
+const output2 = ['PER-Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)', 'PER-Fuerza laboral con educación intermedia (% del total)', 'PER-Fuerza laboral con educación intermedia, varones (% de la fuerza laboral masculina)'];
+const inputIndicador = 'PER-Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)';
+const outputData = {
+  'data': {
+    '1960': '',
+    '1961': '',
+    '1962': '',
+    '1963': '',
+    '1964': '',
+    '1965': '',
+    '1966': '',
+    '1967': '',
+    '1968': '',
+    '1969': '',
+    '1970': '',
+    '1971': '',
+    '1972': '',
+    '1973': '',
+    '1974': '',
+    '1975': '',
+    '1976': '',
+    '1977': '',
+    '1978': '',
+    '1979': '',
+    '1980': '',
+    '1981': '',
+    '1982': '',
+    '1983': '',
+    '1984': '',
+    '1985': '',
+    '1986': '',
+    '1987': '',
+    '1988': '',
+    '1989': '',
+    '1990': '',
+    '1991': '',
+    '1992': '',
+    '1993': '',
+    '1994': '',
+    '1995': '',
+    '1996': '',
+    '1997': '',
+    '1998': '',
+    '1999': '',
+    '2000': '',
+    '2001': '',
+    '2002': 31.4799995422363,
+    '2003': 29.6299991607666,
+    '2004': 27.6299991607666,
+    '2005': 27.2099990844727,
+    '2006': 26.9699993133545,
+    '2007': 27.6700000762939,
+    '2008': 26.9599990844727,
+    '2009': 27.3600006103516,
+    '2010': 25.3400001525879,
+    '2011': 24.7999992370605,
+    '2012': 25.0400009155273,
+    '2013': 24.0900001525879,
+    '2014': 24.2099990844727,
+    '2015': 21.6800003051758,
+    '2016': 23.7399997711182,
+    '2017': 23.7600002288818
+  },
+  'countryName': 'Perú',
+  'countryCode': 'PER',
+  'indicatorName': 'Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)',
+  'indicatorCode': 'SL.TLF.PART.FE.ZS'
+};
 
 // test variable global
 describe('bancoMundial', () => {
   it('deberia ser un objeto', () => {
     expect(typeof bancoMundial).toBe('object');
   });
-});
-
-describe('indicadorPorPais', () => {
-  it('deberia retornar un array', () => {
-    expect(bancoMundial.indicadorPorPais(dataWorldBank, 'PER')).toStrictEqual(arrayIndicadoresTest);
+  // test 1era funcion
+  describe('bancoMundial.indicadorPorPais debería ser una función', () => {
+    it('deberia ser una funcion', () => {
+      expect(typeof bancoMundial.indicadorPorPais).toBe('function');
+    });
+    it('bancoMundial.indicadorPorPais deberia retornar un array de objetos', () => {
+      expect(bancoMundial.indicadorPorPais(input1, 'PER')).toStrictEqual(output1);
+    });
   });
-  it('deberia ser una funcion', () => {
-    expect(typeof bancoMundial.indicadorPorPais).toBe('function');
+  // test 2da funcion
+  describe('bancoMundial.nombreIndicadorPorPais', () => {
+    it('deberia ser una funcion', () => {
+      expect(typeof bancoMundial.nombreIndicadorPorPais).toEqual('function');
+    });
+  
+    it('bancoMundial.nombreIndicadorPorPais deberia retornar un array de strings, donde cada string representa el nombre del indicador', () => {
+      expect(bancoMundial.nombreIndicadorPorPais(output1)).toStrictEqual(output2);
+    });
   });
-});
-
-describe('nombreIndicadorPorPais', () => {
-  it('deberia ser una funcion', () => {
-    expect(typeof bancoMundial.nombreIndicadorPorPais).toEqual('function');
+  // test 3ra funcion 
+  describe('indicadorData', () => {
+    it('deberia ser una funcion', () => {
+      expect(typeof bancoMundial.indicadorData).toEqual('function');
+    });
+    it('deberia retornar un objeto', () => {
+      expect(bancoMundial.indicadorData(dataWorldBank, 'PER', inputIndicador)).toBe(outputData);
+    });
   });
-
-  it('deberia retornar un string', () => {
-    expect(bancoMundial.nombreIndicadorPorPais(dataWorldBank, 'PER').toBe(valorSalida));
+  // test 4ta funcion
+  describe('asdValor', () => {
+    it('deberia ser una funcion', () => {
+      expect(typeof bancoMundial.asdValor).toBe('function');
+    });
   });
-});
-
-describe('indicadorData', () => {
-  it('deberia ser una funcion', () => {
-    expect(typeof bancoMundial.indicadorData).toBe('function');
+  // test 5ta funcion
+  describe('desValor', () => {
+    it('deberia ser una funcion', () => {
+      expect(typeof bancoMundial.desValor).toBe('function');
+    });
   });
-});
-
-describe('asdValor', () => {
-  it('deberia ser una funcion', () => {
-    expect(typeof bancoMundial.asdValor).toBe('function');
-  });
-});
-
-describe('desValor', () => {
-  it('deberia ser una funcion', () => {
-    expect(typeof bancoMundial.desValor).toBe('function');
-  });
-});
-
-describe('calcularProm', () => {
-  it('deberia ser una funcion', () => {
-    expect(typeof bancoMundial.calcularProm).toBe('function');
+  // test 6ta funcion
+  describe('calcularProm', () => {
+    it('deberia ser una funcion', () => {
+      expect(typeof bancoMundial.calcularProm).toBe('function');
+    });
   });
 });
