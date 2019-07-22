@@ -206,7 +206,6 @@ const dataWorldBank = {
     ]
   }
 };
-
 const arrayIndicadoresTest = [
   {
     'data': {
@@ -408,7 +407,8 @@ const arrayIndicadoresTest = [
   },
 ];
 
-const valorSalida = ['PER-Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)'];
+const valorSalida = ['PER-Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)', 'PER-Fuerza laboral con educación intermedia (% del total)', 'PER-Fuerza laboral con educación intermedia, varones (% de la fuerza laboral masculina)'];
+
 
 // test variable global
 describe('bancoMundial', () => {
@@ -421,13 +421,41 @@ describe('indicadorPorPais', () => {
   it('deberia retornar un array', () => {
     expect(bancoMundial.indicadorPorPais(dataWorldBank, 'PER')).toStrictEqual(arrayIndicadoresTest);
   });
+  it('deberia ser una funcion', () => {
+    expect(typeof bancoMundial.indicadorPorPais).toBe('function');
+  });
 });
 
 describe('nombreIndicadorPorPais', () => {
-  // it('deberia retornar un string', () => {
-  //   expect(bancoMundial.nombreIndicadorPorPais(dataWorldBank, 'PER').toStrictEqual(valorSalida));
-  // });
   it('deberia ser una funcion', () => {
-    expect(typeof nombreIndicadorPorPais).toEqual('function');
+    expect(typeof bancoMundial.nombreIndicadorPorPais).toEqual('function');
+  });
+
+  it('deberia retornar un string', () => {
+    expect(bancoMundial.nombreIndicadorPorPais(dataWorldBank, 'PER').toBe(valorSalida));
+  });
+});
+
+describe('indicadorData', () => {
+  it('deberia ser una funcion', () => {
+    expect(typeof bancoMundial.indicadorData).toBe('function');
+  });
+});
+
+describe('asdValor', () => {
+  it('deberia ser una funcion', () => {
+    expect(typeof bancoMundial.asdValor).toBe('function');
+  });
+});
+
+describe('desValor', () => {
+  it('deberia ser una funcion', () => {
+    expect(typeof bancoMundial.desValor).toBe('function');
+  });
+});
+
+describe('calcularProm', () => {
+  it('deberia ser una funcion', () => {
+    expect(typeof bancoMundial.calcularProm).toBe('function');
   });
 });
