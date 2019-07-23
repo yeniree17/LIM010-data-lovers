@@ -169,7 +169,7 @@ listaPaises.addEventListener('change', (event) => { // Funcion para acceder a lo
   listaIndicadores.innerHTML = opcionesLista(nombreIndicadorPorPais(indicadorPorPais(WORLDBANK, paisSeleccionado)));
   // console.log(paisSeleccionado);
   // output de test de nombreIndicadorPorPais
-  console.log(nombreIndicadorPorPais(indicadorPorPais(WORLDBANK, paisSeleccionado)));
+  // console.log(nombreIndicadorPorPais(indicadorPorPais(WORLDBANK, paisSeleccionado)));
 });
 /* Funcion para establecer la primera fecha o rango de fecha en el input*/
 const listaFecha1 = (opcion) => {
@@ -192,7 +192,8 @@ listaIndicadores.addEventListener('change', (event) => {
   const indicadorSeleccionado = event.target.value;
   const pais = indicadorSeleccionado.split('-')[0];
   const intervalo = indicadorSeleccionado.split('-')[1];
-
+  console.log(indicadorSeleccionado);
+  console.log(intervalo);
 
   // const dataAnios = WORLDBANK[pais].indicators[intervalo].data; 
   dataIndicador = indicadorData(WORLDBANK, pais, intervalo);

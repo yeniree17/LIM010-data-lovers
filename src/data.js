@@ -19,19 +19,19 @@ const indicadorData = (data, pais, indicador) => {
 };
 
 // Funcion Ordenar Ascendente
-const asdValor = (data) =>{
-  return data.sort((valor1, valor2) => {
+const asdValor = (array) =>{
+  return array.sort((valor1, valor2) => {
     if (valor1.value > valor2.value) return 1;
-    if (valor1.value < valor2.value) return -1;
-    return 0;
+    else
+      return -1;
   });
 };
 // Funcion Ordenar Descendente
-const desValor = (dataD) =>{
-  return dataD.sort((valor1, valor2) => {
+const desValor = (array) =>{
+  return array.sort((valor1, valor2) => {
     if (valor1.value > valor2.value) return -1;
-    if (valor1.value < valor2.value) return 1;
-    return 0;
+    else
+      return 1;
   });
 };
 /* Funcion para obtener promedio*/

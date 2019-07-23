@@ -408,8 +408,8 @@ const output1 = [
 ];
 
 const output2 = ['PER-Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)', 'PER-Fuerza laboral con educación intermedia (% del total)', 'PER-Fuerza laboral con educación intermedia, varones (% de la fuerza laboral masculina)'];
-const inputIndicador = 'PER-Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)';
-const outputData = {
+const input2 = 'PER-Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)';
+const output3 = {
   'data': {
     '1960': '',
     '1961': '',
@@ -475,7 +475,32 @@ const outputData = {
   'indicatorName': 'Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)',
   'indicatorCode': 'SL.TLF.PART.FE.ZS'
 };
+const input3 = [{key: '2002',
+  value: 57.3788986206055}, {key: '2003',
+  value: 59.2597007751465}, {key: '2004',
+  value: 60.5155982971191}, {key: '2005',
+  value: 58.567699432373}, {key: '2006',
+  value: 59.5596008300781}, {key: '2007',
+  value: 62.5275993347168}];
 
+const output4 = [{key: '2002',
+  value: 57.3788986206055}, {key: '2005',
+  value: 58.567699432373}, {key: '2003',
+  value: 59.2597007751465}, {key: '2006',
+  value: 59.5596008300781}, {key: '2004',
+  value: 60.5155982971191}, {key: '2007',
+  value: 62.5275993347168}];
+
+const output5 = [{key: '2007',
+  value: 62.5275993347168}, {key: '2004',
+  value: 60.5155982971191}, {key: '2006',
+  value: 59.5596008300781}, {key: '2003',
+  value: 59.2597007751465}, {key: '2005',
+  value: 58.567699432373}, {key: '2002',
+  value: 57.3788986206055}];
+
+const output6 = '59.63';
+  
 // test variable global
 describe('bancoMundial', () => {
   it('deberia ser un objeto', () => {
@@ -501,12 +526,12 @@ describe('bancoMundial', () => {
     });
   });
   // test 3ra funcion 
-  describe('indicadorData', () => {
+  describe('bancoMundial.indicadorData', () => {
     it('deberia ser una funcion', () => {
       expect(typeof bancoMundial.indicadorData).toEqual('function');
     });
-    it('deberia retornar un objeto', () => {
-      expect(bancoMundial.indicadorData(dataWorldBank, 'PER', inputIndicador)).toBe(outputData);
+    it('bancoMundial.indicadorData deberia retornar un objeto, donde contiene las propiedades de cada  indicador', () => {
+      expect(bancoMundial.indicadorData(input1, 'PER', input2)).toEqual(output3);
     });
   });
   // test 4ta funcion
@@ -514,17 +539,26 @@ describe('bancoMundial', () => {
     it('deberia ser una funcion', () => {
       expect(typeof bancoMundial.asdValor).toBe('function');
     });
+    it('bancoMundial.asdValor deberia retornar un array de objetos, donde los valores son ordenados de menor a mayor', () => {
+      expect(bancoMundial.asdValor(input3)).toStrictEqual(output4);
+    });
   });
   // test 5ta funcion
   describe('desValor', () => {
     it('deberia ser una funcion', () => {
       expect(typeof bancoMundial.desValor).toBe('function');
     });
+    it('bancoMundial.desValor deberia retornar un array de objetos, donde los valores son ordenados de mayor a menor', () => {
+      expect(bancoMundial.desValor(input3)).toStrictEqual(output5);
+    });
   });
   // test 6ta funcion
   describe('calcularProm', () => {
     it('deberia ser una funcion', () => {
       expect(typeof bancoMundial.calcularProm).toBe('function');
+    });
+    it('bancoMundial.calcularProm deberia retornar un promedio de los valores contenidos en el array del intervalo seleccionado', () => {
+      expect(bancoMundial.calcularProm(input3)).toBe(output6);
     });
   });
 });
