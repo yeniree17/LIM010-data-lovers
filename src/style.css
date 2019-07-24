@@ -81,8 +81,13 @@ h1 {
     display: flex;
     flex-direction: column;  
 }
+.contenedor2 {
+    height: auto;
+    display: flex;
+    flex-direction: column;  
+}
 .recuadro {
-    background: rgba(51, 121, 183, 0.8);
+    background: rgba(51, 121, 183, 1);
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
     width: 320px;
     height: 568px;
@@ -213,25 +218,35 @@ h1 {
 .tabla-datos{
     width: 80%;
     margin: auto;
+    color: #002245;
     text-align: center;
     border-spacing: 0;
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; 
+    font-size: 20px;
 }
+table, th, td {
+    border: 1px solid #002245;
+} 
 .parametro {
     background: #0071BC;
     width: 90%;
     border-radius: 15px;
     margin: 5px auto;
 }
-
   th, td {
     padding: 5px;
   }
   tr:nth-child(even) {
     background-color: #f2f2f2
   }
-  .area-btn{
+  .area-btn {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
     margin: 20px;
+  }
+  .margen{
+      margin: 20px auto;
   }
 footer{
     font-size: 15px;
@@ -249,7 +264,6 @@ margin: 0px;
 }
 .fondo3{
     background:url('./img/fondo3.png');
-    background-repeat: no-repeat;
     background-size: cover;
   }
 .ocultar {
@@ -277,7 +291,7 @@ margin: 0px;
         padding: 1em;
     }
     .btn-nav {
-        font-size: 25px;
+        font-size: 20px;
         }
 
     .recuadro {
@@ -296,14 +310,14 @@ margin: 0px;
         align-self: center;
     }
     .banco-mundial {
-        width: 34%;
+        width: 50%;
     }
     .fondo-blanco {
         width: 300px;
         height: 475px;
     }
     .descripcion{
-        font-size: 25px;
+        font-size: 20px;
         height: 130px;
     }
     .texto{
@@ -312,8 +326,8 @@ margin: 0px;
     .caja-diapositivas{
         max-width: 1280px; 
     }
-    .contenedor1 {
-        flex-flow: row wrap;  
+    .contenedor2 {
+        flex-flow: row;  
     }
     .recuadro-lateral{
         flex-flow: column nowrap;
@@ -325,12 +339,21 @@ margin: 0px;
         justify-content: center;
     }
     .recuadro-resultado{
-        width: 30%;
+        width: 100%;
+        flex-flow: row nowrap;
       }
+    .tabla-datos{
+        width: 50%;
+    }
     .parametro {
         width: 80%;}
     .caja-indicadores{
     width: 80%;
+    }
+    .area-btn{
+        width: 30%;
+        height: auto;
+        align-items: center;
     }
     footer{
         display: flex;

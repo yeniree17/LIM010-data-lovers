@@ -408,7 +408,7 @@ const output1 = [
 ];
 
 const output2 = ['PER-Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)', 'PER-Fuerza laboral con educación intermedia (% del total)', 'PER-Fuerza laboral con educación intermedia, varones (% de la fuerza laboral masculina)'];
-const input2 = 'PER-Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)';
+const input2 = 0;
 const output3 = {
   'data': {
     '1960': '',
@@ -550,6 +550,9 @@ describe('bancoMundial', () => {
     });
     it('bancoMundial.desValor deberia retornar un array de objetos, donde los valores son ordenados de mayor a menor', () => {
       expect(bancoMundial.desValor(input3)).toStrictEqual(output5);
+    });
+    it('bancoMundial.desValor deberia retornar un array de objetos, donde los valores son ordenados de mayor a menor', () => {
+      expect(bancoMundial.desValor(output5)[0].value).toStrictEqual(62.5275993347168);
     });
   });
   // test 6ta funcion

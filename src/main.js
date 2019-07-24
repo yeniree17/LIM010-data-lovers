@@ -171,22 +171,7 @@ listaPaises.addEventListener('change', (event) => { // Funcion para acceder a lo
   // output de test de nombreIndicadorPorPais
   // console.log(nombreIndicadorPorPais(indicadorPorPais(WORLDBANK, paisSeleccionado)));
 });
-/* Funcion para establecer la primera fecha o rango de fecha en el input*/
-const listaFecha1 = (opcion) => {
-  let rangoDesde = '<option disabled selected>--Año--</option>';
-  for (let i = 0; i < opcion.length; i++) {
-    rangoDesde += `<option value='${opcion[i].split('-')[0]}'>${opcion[i].split('-')[0]}</option>`;
-  }
-  return rangoDesde;
-};
-/* Funcion para establecer la segunda fecha o rango de fecha en el input*/
-const listaFecha2 = (opcion) => {
-  let rangoHasta = '<option disabled selected>--Año--</option>';
-  for (let i = 0; i < opcion.length; i++) {
-    rangoHasta += `<option value='${opcion[i].split('-')[0]}'>${opcion[i].split('-')[0]}</option>`;
-  }
-  return rangoHasta;
-};
+
 /* funcion para vincular los indicadores con la data de años en el html */
 listaIndicadores.addEventListener('change', (event) => {
   const indicadorSeleccionado = event.target.value;
@@ -195,6 +180,22 @@ listaIndicadores.addEventListener('change', (event) => {
   console.log(indicadorSeleccionado);
   console.log(intervalo);
 
+  /* Funcion para establecer la primera fecha o rango de fecha en el input*/
+  const listaFecha1 = (data) => {
+    let rangoDesde = '<option disabled selected>--Año--</option>';
+    for (let i = 0; i < data.length; i++) {
+      rangoDesde += `<option value='${data[i]}'>${data[i]}</option>`;
+    }
+    return rangoDesde;
+  };
+  /* Funcion para establecer la segunda fecha o rango de fecha en el input*/
+  const listaFecha2 = (data) => {
+    let rangoHasta = '<option disabled selected>--Año--</option>';
+    for (let i = 0; i < data.length; i++) {
+      rangoHasta += `<option value='${data[i]}'>${data[i]}</option>`;
+    }
+    return rangoHasta;
+  };
   // const dataAnios = WORLDBANK[pais].indicators[intervalo].data; 
   dataIndicador = indicadorData(WORLDBANK, pais, intervalo);
   // test de la f indicador data
@@ -221,8 +222,9 @@ mostrarTabla.addEventListener('click', () => {
   input1 = parseInt(fechaDesde.value);
   // console.log(fechaDesde.value);
   input2 = parseInt(fechaHasta.value);
-
-  let valorData = `<tr>
+  const tituloIndicador = dataIndicador.indicatorName;
+  let valorData = `<caption>${tituloIndicador}</caption>
+  <tr>
   <th>Año</th>
   <th>Dato</th>
   </tr>`;
@@ -243,11 +245,12 @@ mostrarTabla.addEventListener('click', () => {
   areaTabla.innerHTML = valorData;
   console.log(nuevoArray);
 });
-/* Evento del boton para ordenar*/
-
+/* Eventos de los botones para ordenar*/
 btnAscend.addEventListener('click', () => {
   areaTabla.innerHTML = '';
-  let strYears = `<tr>
+  const tituloIndicador = dataIndicador.indicatorName;
+  let strYears = `<caption>${tituloIndicador}</caption>
+  <tr>
   <th>Año</th>
   <th>Dato</th>
   </tr>`;
@@ -262,8 +265,10 @@ btnAscend.addEventListener('click', () => {
 });
 
 btnDescend.addEventListener('click', () => {
+  const tituloIndicador = dataIndicador.indicatorName;
   areaTabla.innerHTML = '';
-  let strYears = `<tr>
+  let strYears = `<caption>${tituloIndicador}</caption>
+  <tr>
   <th>Año</th>
   <th>Dato</th>
   </tr>`;
@@ -281,5 +286,5 @@ btnDescend.addEventListener('click', () => {
 
 /* Evento para calcular el promedio de los datos*/
 btnPromedio.addEventListener('click', () => {
-  resultadoPromedio.innerHTML = `El Promedio es: ${calcularProm(nuevoArray)}` ;
+  resultadoPromedio.innerHTML = `El Promedio es: ${calcularProm(nuevoArray)} %` ;
 });
