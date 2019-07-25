@@ -33,9 +33,9 @@ Los principales usuarios de **LATAM Statistics 360°** son estudiantes universit
 El objetivo de nuestra interfaz **LATAM Statistics 360°** es acceder a datos confiables de Indicadores Socioeconómicos de los países LATAM, presentados de forma sencilla y fácil de entender, que le permita organizar la data por años y porcentajes (%) para una mejor comprensión.
 
 ### ¿Cómo soluciona las necesidades del Usuario?
-Facilita el acceso de la información a los usuarios que requieren datos estadísticos de forma frecuente y en el menor tiempo posible para usarlos de forma efectiva en sus investigaciones; disminuyendo así, los tiempos de búsqueda y las validaciones para corroborar la fuente de los datos consultados. Nuestra interfaz permite un acceso fácil de la información gratuita y estadísticas de los paises emergentes de America Latina (LATAM) para que los usuarios se encuentren actualizados sobre sus economías, solo tienen que ingresar el Usuario y Contraseña, para que pueda acceder al portal de datos donde seleccionará los parámetros de su busqueda de acuerdo a la información que desea investigar.
+Facilita el acceso de la información a los usuarios que requieren datos estadísticos de forma frecuente y en el menor tiempo posible para usarlos de forma efectiva en sus investigaciones; disminuyendo así, los tiempos de búsqueda y las validaciones para corroborar la fuente de los datos consultados. Nuestra interfaz permite un acceso fácil de la información gratuita y estadísticas de los paises emergentes de America Latina (LATAM) para que los usuarios se encuentren actualizados sobre sus economías, solo tienen que ingresar el Usuario y Contraseña, para que puedan acceder al portal de datos donde seleccionarán los parámetros de su busqueda de acuerdo a la información que desea investigar.
 
-Cabe destacar, que esta Base de Datos ha sido tomada del [Banco Mundial](https://www.bancomundial.org/), una organización internacional que ofrece asesoría técnica y financimiento para que los Gobiernos y empresas privadas lleven a cabo proyectos para el Desarrollo e Inclusión Social y favorezca un crecimiento sostenibles de sus países. Sin embargo, nuestra base de datos tendrá un alcance a los Países Latinoamericanos antes mencionados. 
+Cabe destacar, que esta Base de Datos ha sido tomada del [Banco Mundial](https://www.bancomundial.org/), una organización internacional que ofrece asesoría técnica y financimiento para que los Gobiernos y empresas privadas lleven a cabo proyectos para el Desarrollo e Inclusión Social y favorezca un crecimiento sostenible de sus países. Sin embargo, nuestra base de datos tendrá un alcance sólo a los Países Latinoamericanos antes mencionados. 
 
 ### Historias de Usuario
 Para el diseño y la implementación de nuestra interfaz, se consideraron las siguientes cinco (5) historias de usuario definidas en el proyecto. A partir de ellas, se establecieron los Criterios de Aceptación y Definición de Terminado, los cuales representan los requrimientos y necesidades de los usuarios _'target'_:
@@ -57,7 +57,7 @@ Para todas las historias de Usuario se definieron las siguientes definiciones de
 - [x] Que este publicado en GH-Pages
 
 ## Prototipo de Baja Fidelidad
-Luego de evaluar las historias de usuario, como parte de la investigación UX para sastifacer las necesidades del usuario, se diseñó un prototipo de baja fidelidad *(lápiz y papel)* de la interfaz de nuestro producto digital donde se definieron los elementos y el numero de pantallas que formarán parte de nuestra interfaz, donde el usuario podrá interactuar, en corcondancia con las historias de usuarios. A continuación se visualiza la versión desktop y mobile:
+Luego de evaluar las historias de usuario, como parte de la investigación UX para sastifacer las necesidades del usuario, se diseñó un prototipo de baja fidelidad *(lápiz y papel)* de la interfaz de nuestro producto digital donde se definieron los elementos y el número de pantallas que formarán parte de nuestra interfaz, donde el usuario podrá interactuar, en corcondancia con las historias de usuario. A continuación se visualiza la versión desktop y mobile:
 
 ### Versión Desktop
 ![Desktop-Papel](https://user-images.githubusercontent.com/50186958/60815784-fa025c80-a15d-11e9-899c-515ad17eb581.jpeg)
@@ -66,7 +66,7 @@ Luego de evaluar las historias de usuario, como parte de la investigación UX pa
 ![Mobile-Papel](https://user-images.githubusercontent.com/50186958/60816132-a5131600-a15e-11e9-834a-70af78dba3e6.jpeg)
 
 ## Prototipo Final en Figma y Zeplin
-Luego de culminar el prototipo de baja fidelidad y recibir el feedback por parte de los usuarios, se procede a elaborar el diseño de la interfaz usando Figma luego exportandolo a Zeplin.
+Luego de culminar el prototipo de baja fidelidad y recibir el feedback por parte de los usuarios, se procede a elaborar el diseño de la interfaz usando Figma, para luego exportarlo a Zeplin.
 A continuación se presenta la Imagen y link del prototipo de alta fidelidad final (mobile y desktop) en Figma.
 
 ### Versión Desktop
@@ -84,10 +84,10 @@ A continuación se presenta la Imagen y link del prototipo de alta fidelidad fin
 [Diseño exportado a Zeplin](https://zpl.io/ankBB0A)
 
 ## Feedback
-Se realizaron tres (3) feedback por cada Sprint, donde se llevaron a cabo las iteraciones y testeos con 10 usuarios que nos permitieron mejorar el diseño de nuestro aplicativo web. En el primero, se presentó un demo y el prototipo en lápiz y papel de cada una de las ventanas diseñadas para la aplicación Web. 
+Se realizaron un (1) feedback por cada Sprint, donde se llevaron a cabo las iteraciones y testeos con 10 usuarios que nos permitieron mejorar el diseño de nuestro aplicativo web. En el primero, se presentó un demo y el prototipo en lápiz y papel de cada una de las ventanas diseñadas para la aplicación Web. 
 
 | Demo | Producto a Testear | Observaciones | Mejoras Realizadas |
 | :-------: | :--------: | :------------ | :------------ |
 | Sprint 1   | Prototipo de baja fidelidad y Pantalla Logueo       | - Aumentar tamaño de fuente y el color  - El Logueo debe tener una imagen que identifique al Banco Mundial - Aumentar espacio a los inputs del Logueo |- Se cambio el tamaño y el color de la fuente - Se agregó en la pantalla de Logueo como pie de página el logo del Banco Mundial|
 | Sprint 2   | Prototipo de alta fidelidad y Pantallas Logueo y Portal de Datos | - Colocar transparencia al fondo -Mejorar el tamaño del Select de los indicadores - Cambiar el color del texto en la alerta de contraseña incorrecta -Unificar estilos en los botones | -Se edito el fondo - Cambiar el tamaño del input de select - cambio de color del texto de mensaje error en Logueo -Se mejoró los estilos de los botones|
-| Sprint 3   | Prototipo de alta fidelidad y Pantallas Bienvenida y Portal de Datos mejorada| - Alinear texto y tamaño de fuente del menú de navegación -Colocar margen en los textos - Cambiar los estilos de la tabla|-Se cambió la alineación de texto, margen y tamaño - Se mejoró los estilos de la tabla|
+| Sprint 3   | Prototipo de alta fidelidad y Pantallas Bienvenida y Portal de Datos mejorada| - Alinear texto y tamaño de fuente del menú de navegación -Colocar margen en los textos - Cambiar los estilos de la tabla - Colocar un borde entre el logo y el menú de navegación para darle un mejor estilo|-Se cambió la alineación de texto, margen y tamaño - Se mejoró los estilos de la tabla -Se añadio un borde al menú de navegación|
