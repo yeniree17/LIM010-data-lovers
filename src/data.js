@@ -39,7 +39,7 @@ let acum = 0;
 const calcularProm = (array) => {
   array.forEach(elem => {
     suma += elem.value; 
-    acum ++; // numero de valores 
+    acum ++; // suma el numero de valores 
   });
   return (suma / acum).toFixed(2);
 };

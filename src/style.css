@@ -10,14 +10,14 @@ body {
     flex-flow: column;
 }
 .fondo1{
-background-image: url(./img/fondo1.png);
+background-image: url(./img/fondo3.png);
 }
 main {
     flex:1;
 }
 .centrar {
 width: 100%;
-background: #009FDA;
+background: #0071BC;
 display: flex;
 flex-direction: column;
 justify-content: space-around;
@@ -58,7 +58,7 @@ width: 320px;
     font-size: 15px;
     font-weight: bold;
     text-align: center;
-    background-color: #009FDA;
+    background-color: #0071BC;
     border: none;
 }
 
@@ -91,7 +91,7 @@ h1 {
     flex-direction: column;  
 }
 .recuadro {
-    background: rgba(51, 121, 183, 1);
+    background: rgba(0, 113,188, 0.7);
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
     width: 320px;
     height: 568px;
@@ -124,9 +124,18 @@ h1 {
 }
 .boton {
     background: #002245;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 0px;
     width: 280px;
+    height: 50px;
+    color: white;
+    font-size:16px;
+}
+.boton-sec {
+    background: rgba(51, 51, 51, 0.7);
+    border-radius: 20px;
+    border: 0px;
+    width: 150px;
     height: 50px;
     color: white;
     font-size:15px;
@@ -146,15 +155,14 @@ h1 {
     font-size: 20px;
 }
  .banco-mundial {
-    background: rgba(255, 251, 251, 0.9); 
     color: #002245;
     text-align: center;
     font-size: 20px;
     margin: 0px;
     width: 100%;
 } 
-.fondo-blanco {
-    background: rgba(255, 251, 251, 0.9); 
+.fondo-gris {
+    background: rgba(196, 196, 196, 0.8); 
     color: #002245;
     text-align: center;
     font-size: 20px;
@@ -210,7 +218,7 @@ h1 {
 .recuadro-lateral{
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;    
+    /* justify-content: center;     */
 }
 .recuadro-resultado{
   display: flex;
@@ -236,10 +244,15 @@ table, th, td {
     border: 1px solid #002245;
 } 
 .parametro {
-    background: #0071BC;
+    background: #FF7626;
     width: 90%;
-    border-radius: 15px;
-    margin: 5px auto;
+    border-radius: 0px 30px 30px 0px;
+    padding-left: 15px;
+    margin: 5px;
+    text-align: left;
+    /* padding-left: 20px; */
+    padding-top: 5px;
+    padding-bottom: 5px
 }
   th, td {
     padding: 5px;
@@ -269,7 +282,7 @@ footer{
     text-align:center;
     width: 100%;
     margin: 0px auto;
-    background: #009FDA;
+    background: #0071BC;
 }
 .txt-final { 
 margin: 0px;
@@ -278,8 +291,10 @@ margin: 0px;
     background: whitesmoke;
 }
 .fondo3{
-    background:url('./img/fondo3.png');
+    /* background: #F2F3F6; */
+    background: linear-gradient(180deg, #F7F9FF 15.75%, #F0AC84 81.38%);
     background-size: cover;
+    background-attachment: fixed;
   }
 .ocultar {
     display: none;
@@ -319,10 +334,13 @@ margin: 0px;
     .boton {
         align-self: center;
     }
+    .boton-sec {
+        align-self: center;
+    }
     .banco-mundial {
         width: 50%;
     }
-    .fondo-blanco {
+    .fondo-gris {
         width: 300px;
         height: 475px;
     }
@@ -352,15 +370,19 @@ margin: 0px;
         flex-direction: column;
         padding-left: 50px;
     }
+    .pais{
+        display: inline-block;
+    }
     .recuadro-resultado{
-        width: 100%;
+        width: 80%;
         flex-flow: row nowrap;
       }
     .tabla-datos{
         width: 50%;
     }
     .parametro {
-        width: 80%;}
+        width: 80%;
+    font-size: 15px;}
     .caja-indicadores{
     width: 80%;
     }

@@ -1,4 +1,5 @@
 /* Manejo del DOM */
+google.charts.load('current', { packages: ['corechart', 'line'] });
 /* Display de pantalla */
 const logueo = document.getElementById('logueo');
 const bienvenida = document.getElementById('bienvenida');
@@ -33,9 +34,23 @@ const btnDescend = document.getElementById('btn-descend');
 const areaPromedio = document.getElementById('boton-promedio');
 const btnPromedio = document.getElementById('promedio');
 const resultadoPromedio = document.getElementById('valor-promedio');
+const btnGrafico = document.getElementById('chart');
+// const mostrarGrafico = document.getElementById('grafico');
 /* DATA */
 let dataIndicador;
 /* Login del Usuario*/
+const enter = document.getElementById('contrasena');
+
+enter.addEventListener('keyup', (event) => {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById('ingresar').click();
+  }
+});
+
 const ingreso = document.getElementById('ingresar');
 let intento = 0;
 ingreso.addEventListener('click', () => {
@@ -199,12 +214,12 @@ listaIndicadores.addEventListener('change', (event) => {
   fechaDesde.innerHTML = listaFecha1(arrayAnios);
   fechaHasta.innerHTML = listaFecha2(arrayAnios);
 });
-// array que va a contener la data del indicador con el rango de fecha seleccionado
+// Creamos un array que va a contener la data del indicador con el rango de fecha seleccionado
 let nuevoArray = [];
 // variables que van a contener el año seleccionado
 let input1 = '';
 let input2 = '';
-/* Evento para mostrar resultados en tabla*/
+/* Evento para mostrar resultados en tabla cuando el usuario da click a Consultar*/
 mostrarTabla.addEventListener('click', () => {
   nuevoArray = [];
   areaResultado.classList.remove('ocultar');// muestra la seccion de resultados  
@@ -288,3 +303,44 @@ const limpiarSeleccion = () => {
 };
 const limpiarInfo = document.getElementById('borrar');
 limpiarInfo.addEventListener('click', limpiarSeleccion);
+// Función para gráfico
+
+// muestra el grafico utilizando los datos en arrays
+btnGrafico.addEventListener('click', () => {
+  let arrayGrafico = new Array(Object.entries(nuevoArray));
+  let rango = arrayGrafico[0];
+  rango.forEach((elemento, indice) => {
+    elemento[0] = (rango[indice][0]);
+    elemento[1] = parseFloat(rango[indice][1]);
+  });
+  let data = new google.visualization.DataTable();
+  data.addColumn('string', 'X');
+  data.addColumn('number', '% ');
+  data.addRows(rango);
+  const options = {
+    hAxis: {
+      title: 'AÑOS'
+    },
+    vAxis: {
+      title: 'PORCENTAJE'
+    }
+  };
+  const chart = new google.visualization.LineChart(document.getElementById('grafico'));
+  chart.draw(data, options); 
+});
+
+// tgoogle.load('visualization', '1.0', { 'packages': ['corechart'] });
+
+// grafico.addEventListener('click', () => {
+//   google.setOnLoadCallback(grafico); 
+// });
+
+// const generarGrafico = (datos) => {
+//   const dibujarTabla = new google.visualization.DataTable();
+//   dibujarTabla.addColumn('string', 'Nombre');
+//   dibujarTabla.addColumn('string', 'Año');
+//   dibujarTabla.addColumn('number', 'Valor');
+// };
+
+// const chart = new google.visualization.LineChart(document.getElementById('grafico'));
+// chart.draw(data, opciones);
