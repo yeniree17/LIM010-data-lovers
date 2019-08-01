@@ -199,6 +199,14 @@ Se definieron ocho (8) métricas, que van a permitir medir el rendimiento, la ef
 
 ### Evaluación Heurística
 
+
+![Usuario iterando el producto](https://user-images.githubusercontent.com/50186958/62315115-42a9ee80-b45a-11e9-8939-fdac6cd512bb.jpeg)
+Usuario iterando el producto
+![Usuario ejecutando las tareas](https://user-images.githubusercontent.com/50186958/62315321-b64bfb80-b45a-11e9-84b6-9fb7cf2e7eba.jpeg)
+Usuario realizando el testeo de forma remota
+![Realizando el testeo de forma remota](https://user-images.githubusercontent.com/50186958/62315455-f1e6c580-b45a-11e9-8961-59007b8502ef.jpeg)
+Realizando el testeo de forma remota
+
 Luego de la iteración se procede a mejorar el diseño de la interfaz de nuestro producto, y se presenta el prototipo de alta fidelidad. Para Ingresar, click [AQUI](https://www.figma.com/file/uo9sVOduxFGHdgstKRlfIL/Proyecto-Data-Lovers-1era-Iteracion?node-id=0%3A1)
 
 ### Aprendizaje y Oportunidades de Mejora
